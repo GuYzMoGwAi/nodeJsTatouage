@@ -8,7 +8,7 @@ const MongoStore = require("connect-mongo");
 const connectFlash = require("connect-flash");
 const {stripTags} = require ('./helpers/hbs');
 
-
+const app = express();
 var PORT = process.env.PORT || 3050;
 const http = require('http');
 const server = http.Server(app);
@@ -38,7 +38,7 @@ const galeriePostcontroller = require ("./controllers/galeriePost")
 const galerieEdit = require ("./controllers/galerieEdit")
 
 
-const app = express();
+
 
 //MongoDB
 // const db = require('./config/keys').MongoURI
