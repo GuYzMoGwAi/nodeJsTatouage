@@ -1,0 +1,37 @@
+{{>navbar}}
+<section class="add">
+    <div class="container photo-add">
+        <form class="form-field add-photo" action="/galeries/post {{galerie.id}}" method="POST"enctype="multipart/form-data">
+            {{!-- <div class="container add-images">
+                        <script>
+                            CKEDITOR.replace('content');
+                        </script>    
+                    </div> --}}
+
+            <div class="file">
+                <label class="file-label">
+                    <input class="file-input" type="file" name="image" value="{{image}}">
+                    <span class="file-cta">
+                        <span class="file-icon">
+                        </span><br><br>
+                        <span class="file-label">
+                            Modifier l'image.
+                            <i class="fas fa-upload"></i>
+                        </span>
+                    </span>
+                </label><br>
+
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link">Enregistrer</button>
+                    </div>
+                    <div class="control">
+                        <input type=button onclick=window.location.href='http://localhost:3050/' ; value=Annuler />
+                        {{!-- <button class="button is-text">Annuler</button> --}}
+                    </div>
+                </div>
+            </div>
+    </div>
+    </form>
+    </div>
+</section>

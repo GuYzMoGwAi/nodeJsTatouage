@@ -1,0 +1,1084 @@
+html {
+  height: 100%;
+}
+
+/* ==========================================
+  RESET
+===========================================*/
+
+* {
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+
+}
+
+/*====================================
+  BASE STYLES
+====================================*/
+
+body {
+  width: 100%;
+  height: 100%;
+
+
+}
+
+
+* {
+  font-size: 1em;
+}
+
+#main {
+  background-color: #ddd;
+  padding-top: 120px;
+  min-height: 500px;
+  margin-left: 60px;
+  margin-right: 60px;
+
+}
+
+.container {
+  background-color: rgb(255, 255, 255);
+
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+
+
+/*====================================
+  HEADER STYLES
+====================================*/
+header {
+  background: #e9e9e9;
+  box-shadow: 0px -3px 15px 2px;
+  display: flex;
+}
+
+.header-container {
+  background: #eee;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+}
+
+.logo {
+  width: 110px;
+  height: 160px;
+  padding: 10px 0 5px 0;
+  border-radius: 25px;
+  box-shadow: none;
+}
+
+
+/*====================================
+MENU STYLES
+====================================*/
+
+.main-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 25px;
+  overflow: visible;
+  max-width: 700px;
+}
+
+.main-menu .toggleNav {
+  display: none;
+  overflow: hidden;
+}
+
+.main-menu .toogleNav:after {
+  display: inline-flex;
+  overflow: visible;
+}
+
+.main-menu a.bg {
+  background-color: #dddddd;
+}
+
+.main-menu a {
+  width: 100%;
+  text-align: center;
+  padding: .75em 1em;
+  display: block;
+  color: rgb(2, 2, 2);
+  border-bottom: 5px solid #ddd;
+}
+
+.main-menu a:hover {
+  color: #5f5f5f;
+  border-bottom-color: #ffffff;
+}
+
+.main-menu a i {
+  color: white;
+}
+
+.main-menu a i:hover {
+  color: #697483;
+  border-bottom-color: #ffffff;
+}
+
+img.logo {
+  text-decoration: none;
+  border: none;
+}
+
+/*====================================
+DROPDOWN MENU STYLES
+====================================*/
+
+.drop-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  transition: max-height .4s, opacity .3s;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+
+.drop-menu>.menu-button {
+  height: 100%;
+  transition: transform .4s;
+  transform: translateY(-300%);
+  background: #aaa;
+}
+
+.dropdown-container:hover>.menu-button {
+  color: #fcfcfc;
+  background: #333;
+}
+
+
+.dropdown-container:hover .drop-menu {
+  max-height: 300px;
+  opacity: 1;
+}
+
+
+.dropdown-container:hover>.drop-menu .menu-button {
+  transform: translateY(0%);
+}
+
+/*====================================
+Social media buttons
+=====================================*/
+.main-menu ul {
+  background-color: #a5a8a8;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.main-menu li {
+  flex: 3;
+}
+
+.main-menu social {
+  flex: 1;
+}
+
+/*====================================
+MEDIA QUERIES
+====================================*/
+@media all and (max-width:768px) {
+  .main-menu li {
+    flex-basis: 100%
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container>* {
+    order: 5000;
+  }
+
+  .main-menu {
+    order: 1;
+  }
+
+  .toggleNav {
+    display: block;
+  }
+
+  .main-menu ul {
+    display: none;
+  }
+
+  .main-menu ul.open {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+
+
+  /*====================================
+    DROP-MENU EFFECTS (LARGER SCREENS)
+  ====================================*/
+
+  .effect {
+    transition: max-height 0s;
+    opacity: 1;
+    background: transparent;
+  }
+
+  .effect .menu-button {
+    transform: translateY(0%);
+  }
+
+  .fade-in .menu-button {
+    transition: opacity .5s;
+    opacity: 0;
+  }
+
+  .dropdown-container:hover .fade-in .menu-button {
+    opacity: 1;
+  }
+
+  .header-container {
+    width: 100%;
+  }
+
+  .header-container {
+    height: 160px;
+    justify-content: space-between;
+  }
+
+  .main-menu {
+    flex-direction: row;
+    align-items: flex-start;
+    height: 48px;
+    margin: 0;
+    flex-wrap: nowrap;
+  }
+
+  .main-menu>.menu-button {
+    width: 23%;
+    max-width: 150px;
+  }
+
+  .logo {
+    max-width: 130px;
+    max-height: 160px;
+    margin-top: 15px;
+  }
+
+}
+
+@media (min-width: 850px) {
+
+  .header-container {
+    flex-direction: row;
+    justify-content: space-around;
+    height: 160px;
+  }
+
+  .main-menu {
+    width: 60%;
+    justify-content: space-between;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+}
+
+/*============================
+      Evenement
+============================*/
+
+h1.evenement {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 0 0;
+  color: black;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.photo-evenement {
+  display: flex;
+  justify-content: center;
+}
+
+.strong {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 10px 0;
+  border: 4px inset black;
+  margin-right: 10px;
+  border-radius: 30px;
+}
+
+.nostrong {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 10px 0;
+  border: 4px outset black;
+  margin-right: 10px;
+  border-radius: 30px;
+}
+
+.tarif {
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+  border: 5px outset black;
+  border-radius: 20px;
+}
+
+.map1 {
+  display: flex;
+  margin: 0 auto;
+  height: 440px;
+  padding-top: 50px;
+}
+
+.description {
+  justify-content: flex-end;
+  background-color: #ac9458;
+  width: 500px;
+}
+
+
+.flexbox-container {
+  display: flex;
+  justify-content: center;
+  color: black;
+  margin-top: 25px;
+}
+
+.flexbox-container>div {
+  padding: 20px 0 0 0;
+  justify-content: center;
+}
+
+.flexbox-container>div:first-child {
+  margin-right: 20px;
+}
+
+.date {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 0 auto;
+  text-decoration: underline overline;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .photo-evenement {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .strong {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/*===========================
+       PHOTOS 
+===========================*/
+
+.h1photos {
+  text-align: center;
+  padding: 50px 0 0px 0;
+  color: black;
+  text-decoration: underline;
+}
+
+
+#galerie {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* background-image: url(../images/Kraken2.jpeg); */
+  background-color: #bfbfbf;
+  border-radius: 10px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 15rem 15px 15rem;
+}
+
+#galerie img {
+  flex: 1 1 auto;
+  width: 200px;
+  height: 200px;
+  margin: 0.5rem;
+  object-fit: cover;
+  border: 2px inset rgb(116, 135, 151);
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px #28323B;
+  transform: scale(1);
+  transition: transform 2s;
+}
+
+.supp {
+  display: none;
+}
+
+#galerie img:hover .supp:hover {
+  display: block;
+position:absolute;
+}
+
+#galerie img:hover {
+  transform-origin: 50% 50%;
+  transform: scale(2);
+  z-index: 999;
+  border-radius: 10px;
+}
+
+.machin {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20rem;
+}
+
+.btn-galerie {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.btn-galerie.btn-galerie:hover {
+  background: rgba(129, 124, 124, 0.664);
+  color: #ffffff;
+}
+
+
+/*==============================
+          Contact
+==============================*/
+
+.contactcontainer {
+  background-image: url(../images/k1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container.contactcontainer {
+  padding-top: 2px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 700px;
+  margin: 50px auto;
+  background: #4e9fe2;
+  box-sizing: border-box;
+  padding: 40px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  font-size: 35px;
+  color: black;
+}
+
+.h1contact {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  font-size: 35px;
+  color: #fff;
+}
+
+.address {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin-bottom: 50px;
+}
+
+.a-icon {
+  color: rgb(255, 255, 255);
+}
+
+.inner-address p {
+  font-size: 12px;
+}
+
+.inner-address .fas {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.form-title {
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.input-name .input {
+  height: 35px;
+}
+
+.input-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 30px 10px 50px 10px;
+}
+
+.input-name {
+  margin-right: 10px;
+}
+
+.inner-msg {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input>input {
+  border: 0;
+  width: 260px;
+  padding: 10px 20px;
+  outline: none;
+}
+
+.msg>textarea {
+  width: 100%;
+  border: 0;
+  padding: 10px 20px;
+  outline: none;
+  height: 150px;
+}
+
+.btn {
+  border: 2px solid #fff;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #6465a5;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  color: #a9aacd;
+}
+
+.inner-social .fab {
+  margin: 0 20px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.fab:hover {
+  color: rgb(32, 57, 124);
+}
+
+::-webkit-input-placeholder {
+  color: #a9aacd;
+}
+
+::-moz-placeholder {
+  color: #a9aacd;
+}
+
+:-ms-input-placeholder {
+  color: #c2a9cd;
+}
+
+@media screen and (max-width: 640px) {
+  .input-form {
+    flex-direction: column;
+  }
+
+  .input:first-child>input {
+    margin-bottom: 20px;
+  }
+
+  .form .input>input {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .address {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inner-address {
+    margin-bottom: 20px;
+  }
+
+  .social {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inner-social {
+    margin-bottom: 20px;
+  }
+}
+
+
+/*=============================
+      footer
+==============================*/
+
+footer {
+  background-color: black;
+  background: rgb(192, 202, 222);
+  background: linear-gradient(87deg, rgba(192, 202, 222, 1) 0%, rgba(45, 62, 154, 1) 49%, rgba(29, 125, 196, 1) 85%);
+  height: 125px;
+}
+
+.p-footer {
+  color: black;
+  text-align: center;
+  padding: 3rem;
+  margin: 0;
+}
+
+.copyright {
+  padding: 10px;
+}
+
+.copyright a {
+  color: white;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+
+/*=====================
+    Login
+=====================*/
+
+
+
+
+.form-login {
+  /*Remember to use the other versions for IE 10 and older browsers! */
+  height: 50rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font-family: 'lato', sans-serif;
+  color: #fff;
+  background-color: white;
+  /* background: linear-gradient(87deg, rgba(192, 202, 222, 1) 0%, rgba(45, 62, 154, 1) 49%, rgba(29, 125, 196, 1) 85%); */
+}
+
+.containerlogin {
+  background: linear-gradient(87deg, rgba(192, 202, 222, 1) 0%, rgba(45, 62, 154, 1) 49%, rgba(29, 125, 196, 1) 85%);
+  border-radius: 5px;
+  box-shadow: 0 1.5px 0 0 rgba(0, 0, 0, 0.1);
+  height: 30rem;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.logo-login {
+  font-family: "museo-slab";
+  font-size: 20px;
+  text-align: center;
+  padding: 60px 20px 0;
+  margin: 0;
+  color: white;
+}
+
+.login-item {
+  color: #ffff;
+  padding-top: 2rem;
+  margin: 0 auto;
+  border-radius: 3px;
+}
+
+.form-input {
+  border: 0;
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  margin: 0;
+  outline: 0;
+  padding: 16px;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+}
+
+.user:before {
+  content: '\f007';
+  font: 14px fontawesome;
+  color: #5b5b5b;
+}
+
+.lock:before {
+  content: '\f023';
+  font: 14px fontawesome;
+  color: #5b5b5b;
+}
+
+.form input[type="password"],
+.form input[type="text"],
+.form input[type="submit"] {
+  width: 100%;
+}
+
+.form-login label,
+.form-login input[type="text"],
+.form-login input[type="password"],
+.form-login input[type="submit"] {
+  border-radius: 8px;
+  padding: 1rem;
+  color: #3A3F44;
+}
+
+.form-login label {
+  background-color: #222222;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.form-login input[type="text"],
+.form-login input[type="password"] {
+  background-color: #ffffff;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.form-login input[type="text"]:focus,
+.form-login input[type="text"]:hover,
+.form-login input[type="password"]:focus,
+.form-login input[type="password"]:hover {
+  background-color: #eeeeee;
+}
+
+.form-login input[type="submit"] {
+  background-color: rgb(51, 113, 194);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.form-login input[type="submit"]:focus,
+.form-login input[type="submit"]:hover {
+  background: linear-gradient(rgba(45, 62, 154, 1) 49%, rgba(29, 125, 196, 1) 85%);
+}
+
+.form-field {
+  display: -webkit-flex;
+  display: flex;
+  font-family: "museo-slab";
+  font-size: 16px;
+  text-align: center;
+  padding: 50px 20px 0;
+  margin: 0;
+}
+
+.form-field-log {
+  display: flex;
+  justify-content: center;
+  margin: 3rem;
+}
+
+.form-submit {
+  display: -webkit-flex;
+  display: flex;
+  font-family: "museo-slab";
+  font-size: 16px;
+  text-align: center;
+  margin: 5px 0 0 120px;
+}
+
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.text--center {
+  text-align: center;
+}
+
+
+/*============================
+
+        Register
+
+============================*/
+
+.container.register-container {
+  display: flex;
+  justify-content: center;
+  padding: 125px 20px 40px 20px;
+  margin: 4rem 30rem 1rem 30rem;
+}
+
+.content.content-register {
+  background: linear-gradient(87deg, rgba(192, 202, 222, 1) 0%, rgba(45, 62, 154, 1) 49%, rgba(29, 125, 196, 1) 85%);
+}
+
+/*============================
+        Add articles
+============================*/
+
+
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.container.pageedit {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.row {
+  margin: 0rem 2rem 2rem 2rem;
+}
+
+.container .add-article {
+  background: linear-gradient(87deg, rgba(192, 202, 222, 1) 0%, rgba(45, 62, 154, 1) 49%, rgba(29, 125, 196, 1) 85%);
+  border-radius: 5px;
+  box-shadow: 0 1.5px 0 0 rgba(0, 0, 0, 0.1);
+  height: 55rem;
+  width: 65rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field .evenement {
+  display: flex;
+  justify-content: center;
+  font-family: "museo-slab";
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  flex-direction: column;
+  padding: 10px 0 30px 0;
+}
+
+label.label {
+  padding-bottom: 20px;
+}
+
+.containerarticles {
+  height: 100%;
+  width: 100%;
+  margin: 0 0 0 20rem;
+}
+
+.title-add {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+
+  font-size: 35px;
+  color: black;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: black;
+  font-size: 1.50em;
+  text-align: center;
+  padding-top: 10px;
+  text-decoration: underline;
+}
+
+img {
+  display: flex;
+  margin: 2rem auto;
+  flex: 2 1 auto;
+  width: 45rem;
+  height: 40rem;
+  -webkit-box-shadow: 0px 10px 10px 0px rgba(145, 156, 155, 1);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(145, 156, 155, 1);
+  box-shadow: 0px 5px 10px 0px rgba(145, 156, 155, 1);
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+
+.date {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 0 auto;
+  text-decoration: underline overline
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 50rem;
+  border: groove black;
+  margin-top: -5rem;
+  padding: 3rem;
+  box-shadow: 4px 4px #bfbfbf, -2px 0 .2em #bfbfbf;
+  border-radius: 8px;
+  border-width: 1px;
+  flex: 1;
+}
+
+.box {
+  display: flex;
+  margin: -5rem 0 0 30rem;
+  padding: 3rem;
+  flex: 2 1 auto;
+  width: 55rem;
+  height: 20rem;
+  -webkit-box-shadow: 0px 10px 10px 0px rgba(145, 156, 155, 1);
+  -moz-box-shadow: 0px 10px 10px 0px rgba(145, 156, 155, 1);
+  box-shadow: 0px 10px 10px 0px rgba(145, 156, 155, 1);
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+.control {
+  padding: 10px 0 10px 0;
+  text-align: center;
+}
+
+
+/*==============================
+            Add Photo
+==============================*/
+
+.add {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.add-photo {
+  display: flex;
+  justify-content: center;
+  font-family: "museo-slab";
+  font-size: 16px;
+  text-align: center;
+  padding: 50px 20px 0;
+  margin: 0;
+}
+
+.photo-add {
+  background: linear-gradient(87deg, rgba(192, 202, 222, 1) 0%, rgba(45, 62, 154, 1) 49%, rgba(29, 125, 196, 1) 85%);
+  border-radius: 1000px;
+  box-shadow: 0 1.5px 0 0 rgba(0, 0, 0, 0.1);
+  height: 30rem;
+  width: 30rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+/*==============================
+        Edit photo
+==============================*/        
+
+
+
+
+.edit {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.edit-photo {
+  display: flex;
+  justify-content: center;
+  font-family: "museo-slab";
+  font-size: 16px;
+  text-align: center;
+  padding: 50px 20px 0;
+  margin: 0;
+}
+
+.photo-edit {
+  background: linear-gradient(87deg, rgba(192, 202, 222, 1) 0%, rgba(45, 62, 154, 1) 49%, rgba(29, 125, 196, 1) 85%);
+  border-radius: 1000px;
+  box-shadow: 0 1.5px 0 0 rgba(0, 0, 0, 0.1);
+  height: 30rem;
+  width: 30rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* .editphoto {
+  width: 100px;
+  height: 100px;
+} */

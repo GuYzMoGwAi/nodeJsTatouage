@@ -1,0 +1,39 @@
+{{>navbar}}
+<section class="section">
+    <div class="container is-fulhd">
+        <form class="form-login" action="/user/loginAuth" method="POST" enctype="multipart/form-data">
+
+            <script src="https://use.typekit.net/rjb4unc.js"></script>
+            <script>
+                try {
+                    Typekit.load({
+                        async: true
+                    });
+                } catch (e) {}
+            </script>
+
+            <div class="containerlogin">
+                <div class="logo-login">Se connecter</div>
+                <div class="login-item">
+                    <form action="" method="post" class="form form-login">
+                        <div class="form-field">
+                            <label for="login-username"><span class="hidden">Email</span><i class="fas fa-user"></i></label>
+                            <input id="login-username" type="Email"  name="email" class="form-input" placeholder="Email" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="login-password"><span class="hidden">Password</span><i class="fas fa-lock"></i></label>
+                            <input id="login-password" type="password" name="password" class="form-input" placeholder="Password"
+                                required>
+                        </div>
+
+                        <div class="form-field-log">
+                            <input type="submit" value="Log in">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+</section>
+
+{{>footer}}

@@ -1,0 +1,158 @@
+{{!-- {{>navbar}}
+<section class="section">
+    <div class="container is-fulhd">
+
+
+
+        <div class="content">
+            <ol type="1">
+                {{#each errors}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ol>
+        </div>
+        
+
+        <section class="section">
+    <div class="container is-fulhd">
+        <form class="form-login" action="/user/register" method="POST" enctype="multipart/form-data">
+
+          
+
+            {{!-- <div class="containerlogin">
+                <div class="logo-login">S'inscrire</div>
+                <div class="login-item">
+                    <form action="" method="post" class="form form-login">
+
+                        <div class="form-field">
+                            <label for="login-username"><span class="hidden">Name</span><i class="fas fa-user"></i></label>
+                            <input id="login-username" type="text" class="form-input" placeholder="Username" required value={{data.name}}>
+                        </div>
+
+                       <div class="form-field">
+                           <label for="login-email"><span class="hidden">Email</span><i class="fas fa-envelope-open"></i></label>
+                           <input id="login-email" type="text" class="form-input" placeholder="Email" required value={{data.email}}> 
+                       </div>
+
+
+                        <div class="form-field">
+                            <label for="login-password"><span class="hidden">Password</span><i class="fas fa-lock"></i></label>
+                            <input id="login-password" type="password" class="form-input" placeholder="Password" required value={{data.password}}>
+                        </div>
+
+                        <div class="form-submit">
+                            <input type="submit" value="Envoyer">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+</section>  --}}
+
+
+
+        {{!-- <form action="/user/register" method="POST" enctype="multipart/form-data">
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="name" placeholder="Text input" value={{data.name}}>
+                </div>
+            </div>
+
+
+
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="email" name="email" placeholder="Email input" value={{data.email}}>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input class="input" type="password" name="password" placeholder="Password" value={{data.password}}>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
+            </div>
+
+
+
+
+            <div class="form-field evenement">
+                <div class="control">
+                    <button class="button is-link">Enregistrer </button>
+                </div>
+                <div class="control">
+                    <button class="button is-text">Annuler </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</section>
+
+{{>footer}} --}} 
+{{>navbar}}
+<section class="section">
+    <div class="container register-container">
+
+        <div class="content content-register">
+            <ol type="1">
+                {{#each errors}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ol>
+
+        <form action="/user/register" method="POST" enctype="multipart/form-data">
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="name" placeholder="" value={{data.name}}>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="email" name="email" placeholder="" value={{data.email}}>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Password</label>
+                <p class="control has-icons-left">
+                    <input class="input" type="password" name="password" placeholder="" value={{data.password}}>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link">Enregistrer </button>
+                </div>
+                <div class="control">
+                    <button class="button is-text">Annuler </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</section>
+</div>
+
+{{>footer}}
