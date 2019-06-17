@@ -1,0 +1,37 @@
+<!-- BOOTSTRAP -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- AJAX/JQUERY -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<script>
+{{!----- Script limit text ----}}
+{{!-- Text item article Blog --}}
+    var p = $('#dash p');
+    var ks = $('#dash').height();
+    while ($(p).outerHeight() > ks) {
+ $(p).text(function(index, text) {
+   return text.replace(/\W*\s(\S)*$/, '...');
+ });
+}
+</script>
+
+ <!-- Charge js libs uniquement lorsque la page est chargée. -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.custom.72241.js"></script>
+    <!-- Scripts de modèles personnalisés -->
+    <script src="./public/js/magister.js"></script>
+   <!-- Script Parallax-->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   <script src="/path/to/parallax.js"></script>
+    <!-- icon et ckeditor -->
+    <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="//cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
+
+    <!-- Script modal login -->
+    
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

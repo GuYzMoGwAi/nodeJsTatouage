@@ -1,21 +1,18 @@
 {{>navbar}}
+
 <section>
     <div class="container pageedit">
         <p class="img"><img src="{{galerie.image}}" /></p>
-        </div>  
-        {{#if user}}
-         
-       
-         <div class="control"> 
-            <a href="/galerie-edit/{{galerie._id}} {{image}}"><button type="button"
-                    class="btn">Editer</button></a>
-            <a href="/galerie-delete/{{galerie._id}}"><button type="button"
-                    class="btn">supprimer</button></a>
-                    <input class="btn" type=button onclick=window.location.href='https://tatouage.herokuapp.com/'; value=Annuler />
-                    {{!-- <button class="button is-text">Annuler</button> --}}
+    </div>
+    {{#if user}}
+    <div class="control">
+        <a href="/galerie-edit/{{galerie._id}} {{image}}"><button type="button" class="btn">Editer</button></a>
+        <a href="/galerie-delete/{{galerie._id}}"><button type="button" class="btn">supprimer</button></a>
+        <input class="btn" type=button onclick=window.location.href='http://localhost:3050' ; value=Annuler />
+        {{!-- <button class="button is-text">Annuler</button> --}}
         {{/if}}
-                
-         </div>
-    </div>   
+
+    </div>
+    </div>
 </section>
 {{>footer}}

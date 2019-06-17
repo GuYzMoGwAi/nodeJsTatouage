@@ -1,3 +1,6 @@
+
+{{>navbar}}
+
 <section class="section">
     <div class="container is-fullhd">
         <form class="form-field" action="/article/edit/{{article.id}}" method="POST" enctype="multipart/form-data">
@@ -35,7 +38,7 @@
                             <span class="file-icon">
                             </span><br><br>
                             <span class="file-label">
-                                Choisir son image
+                                Choisir son image <br>(*pohoto obligatoire)
                                 <i class="fas fa-upload"></i>
                             </span>
                         </span>
@@ -47,7 +50,7 @@
                         <button class="button is-link">Enregistrer</button>
                     </div>
                     <div class="control">
-                        <input type=button onclick=window.location.href='https://tatouage.herokuapp.com/'; value=Annuler />
+                        <input type=button onclick=window.location.href='http://localhost:3050'; value=Annuler />
                         {{!-- <button class="button is-text">Annuler</button> --}}
                     </div>
                 </div>

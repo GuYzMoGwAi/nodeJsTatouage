@@ -1,8 +1,10 @@
+{{>navbar}}
+
 <section class="section">
     <div class="container is-fullhd">
         <form class="form-field" action="/galerie-edit/{{image.name}}" method="POST" enctype="multipart/form-data">
-            <div class="container add-article">
-            <h2>Changement ou Suppression !</h2>
+            <div class="container edit-galerie">
+            <h2>Modifier ou Supprimer</h2>
                 <div class="form-field evenement">
                     <div class="control">
                         <input class="input" type="hidden" name="galerieId" value={{galerie.id}}>
@@ -36,7 +38,7 @@
                                 class="btn">Editer</button></a> --}}
                         <a href="/galerie-delete/{{galerie._id}}"><button type="button"
                                 class="btn">supprimer</button></a>
-                        <input class="btn" type=button onclick=window.location.href='https://tatouage.herokuapp.com/' ;
+                        <input class="btn" type=button onclick=window.location.href='http://localhost:3050' ;
                             value=Annuler />
                         {{!-- <button class="button is-text">Annuler</button> --}}
                         {{/if}}
@@ -49,3 +51,5 @@
         </form>
     </div>
 </section>
+
+{{>footer}}

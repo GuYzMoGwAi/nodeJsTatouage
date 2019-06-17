@@ -1,42 +1,37 @@
 {{> navbar}}
-<section class="container">
-    <div class="column">
+<section>
+  
+  
 
-      {{#each posts}}
-      <div class="row">
-        <img src="{{image}}" alt="Placeholder image">
-        <div class="content" {{!--contenteditable="true"--}}>
-          <a href="/articles/{{_id}}">
-            <h2>{{title}}</h2>
-          </a>
-          <p>{{{content}}}</p>
-          <div class="date">
+  
+<div class="container">
+  {{#each posts}}
+  <div class="card">
+    <img class="card-img-top" src="{{image}}" alt="Image">
+    <div class="card-body">
+      <div class="content" id="dash" {{!--contenteditable="true"--}}>
+        <a href="/articles/{{_id}}">
+          <h2 class="card-title">{{title}}</h2>
+        </a>
+        <p class="card-text">{{{content}}}</p>
+        <div class="date">
           <p>Publié par {{auteur}}, le {{moment creatDate format="DD-MM-YY"}}</p>
-          </div>  
-
         </div>
       </div>
     </div>
-    {{/each}}
-
-
   </div>
+  {{/each}}
+</div>
+
+</div>
+</div>
+</div>
 </section>
 
-{{!-- </section>
-    <div class="map1">
-      <iframe class="map1"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1477.5619137819035!2d-1.7731465951714358!3d46.541452793006165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48045cd55dcc64ff%3A0x3f552b78abf5afb0!2s71+Rue+du+8+Mai+1945%2C+85340+Olonne-sur-Mer!5e1!3m2!1sfr!2sfr!4v1554378881725!5m2!1sfr!2sfr"
-        width="400" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-  </div>
-</div> --}}
 
-
-    </div>
-  </div>
-</section>
-
+<!--========================================== 
+                  GALERIE PHOTO
+ ===========================================-->
 <div class="flex-container">
   <h1 class="h1photos">Galerie Photo</h1>
   {{!-- <div class="machin">
@@ -47,71 +42,11 @@
 
 <div id="galerie">
   {{#each imgGal}}
-  <img src="{{image}}" alt="ton image" style="cursor:pointer;" onclick="javascript:window.location.replace('/galerie-edit/{{_id}}')"/>
-  {{!-- <img src="{{image}}"  onclick="open('galerie/add', 'Popup', 'scrollbars=1,resizable=1,height=560,width=770'); return false;"/> --}}
-
-  {{!-- <img src="{{image}}" alt="Photos de tatouage"/> --}}
+  <img src="{{image}}" alt="ton image" style="cursor:pointer;"
+    onclick="javascript:window.location.replace('/galerie-edit/{{_id}}')" />
   {{/each}}
 </div>
 </div>
 
-<!------Contact------>
-<div class="container contactcontainer">
-  <div class="wrapper">
-    <h1 class="h1contact">Contact Nolink</h1>
-    <div class="address">
-      <div class="inner-address">
-        <i class="fas fa-map-marker-alt"></i>
-        <p>54 Rue Nationale, 85140 L'Oie Nolink<br />France</p>
-      </div>
-      <div class="inner-address">
-        <i class="fas fa-envelope"></i>
-        <p>Pasencore@gmail.com</p>
-      </div>
-      <div class="inner-address">
-        <i class="fas fa-phone-volume"></i>
-        <p>06 09 12 37 07</p>
-      </div>
-    </div>
 
-    <div class="form">
-      <div class="form-title">
-        Laissez-nous votre précieux message
-      </div>
-      <div class="input-form">
-        <div class="input-name">
-          <input class="input-name input" type="text" placeholder="Nom">
-        </div>
-        <div class="input-email">
-          <input class="input-name input" type="email" placeholder="Email">
-        </div>
-      </div>
-      <div class="inner-msg">
-        <div class="msg">
-          <textarea placeholder="Message"></textarea>
-        </div>
-      </div>
-      <div class="btn">
-        Envoyer message
-      </div>
-    </div>
-
-
-    <div class="social">
-      <div class="inner-social">
-        <a class="a-icon" href="https://www.facebook.com/Noli.Ink/" target="_blank" rel="noopener"><i
-            class="fab fa-facebook-f"></i>
-          <a class="a-icon" href="https://www.facebook.com/Noli.Ink/" target="_blank" rel="noopener"><i
-              class="fab fa-twitter"></i>
-            <a class="a-icon" href="https://www.facebook.com/Noli.Ink/" target="_blank" rel="noopener"><i
-                class="fab fa-linkedin-in"></i>
-      </div>
-      <div class="inner-social">
-        <a class="a-icon" href="https://www.facebook.com/Noli.Ink/"><i class="fab fa-google-plus-g"></i>
-          <a class="a-icon" href="https://www.facebook.com/Noli.Ink/"><i class="fab fa-reddit-alien"></i>
-            <a class="a-icon" href="https://www.facebook.com/Noli.Ink/"><i class="fab fa-whatsapp"></i>
-      </div>
-    </div>
-  </div>
-</div>
 {{>footer}}
