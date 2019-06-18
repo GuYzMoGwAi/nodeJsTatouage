@@ -69,7 +69,7 @@ const articleEdit = require ("./controllers/articleEdit")
 //* USER ===============================================
 const userCreate = require("./controllers/userCreate")
 const userRegister = require("./controllers/userRegister")
-const userLogin = require("./controllers/userLogin")
+const userLogin = require ("./controllers/userLogin")
 const userLoginAuth = require("./controllers/userLoginAuth")
 const userLogout = require ('./controllers/userLogout')
 
@@ -165,9 +165,9 @@ app.post('/galerie/edit/:id', function(req,res){
 // USERS ================================================
 app.get("/user/create", redirectAuthSuccess, userCreate)
 app.post("/user/register", redirectAuthSuccess, userRegister)
-app.get("/user/login", redirectAuthSuccess, userLogin)
+app.get ("/user/login", redirectAuthSuccess, userLogin)
 app.post("/user/loginAuth", redirectAuthSuccess, userLoginAuth)
-app.get ('/user/logout', userLogout)
+app.get ("/user/logout", userLogout)
 
 
 // CONTACT ==============================================

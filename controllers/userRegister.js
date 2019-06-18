@@ -9,7 +9,7 @@ module.exports = (req, res) => {
                 req.flash("registerError", registerError)
                 req.flash("data", req.body)
 
-                return res.redirect("/user/create")
+                return res.redirect("/#darkModalForm2")
             }
 
             res.redirect("/")

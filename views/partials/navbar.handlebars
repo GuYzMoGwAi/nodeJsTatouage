@@ -29,23 +29,29 @@
             </li>
 
             {{#if user}}
-            <a class="nav-link" href="/articles/add">
-              Ajouts&nbsp;événement
-            </a>
-            <a class="nav-link" href="/galerie/add">
-              Photo
-            </a>
-            <a class="nav-link" href="/user/logout">
-              Déconnexion
-            </a>
+            <li class="nav-item">
+            <a class="nav-link" href="/articles/add">Ajouts&nbsp;événement</a> 
+            </li>
+
+            <li class="nav-item">
+            <a class="nav-link" href="/galerie/add">Photo</a>
+            </li>
+
+            <li class="nav-item">
+            <a class="nav-link" href="/user/logout">Déconnexion</a>
+            </li>
+
             {{else}}
-            <a class="nav-link" data-toggle="modal" data-target="#darkModalForm" href="/user/login">
-              Connexion
-            </a>
-            <a class="nav-link" data-toggle="modal" data-target="#darkModalForm2" href="/user/create">
-              Inscription
-            </a>
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#darkModalForm" href="#">Connexion</a>
+            </li>
+
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#darkModalForm2" href="#">Inscription</a>
+            </li>
+
             {{/if}}
+            </ul>
           </ul>
           </div>
 
