@@ -23,23 +23,28 @@
                 <a href="#" class="dropdown-item">Acquis</a>
               </div>
             </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link  dropdown-toggle" data-toggle="dropdown">Présentation</a>
+              <div class="dropdown-menu dropdown-menu">
+                <a href="https://syndicat-national-des-artistes-tatoueurs.assoconnect.com/page/86339-reglementation" class="dropdown-item">Hygiène</a>
+                <a href="#" class="dropdown-item">Tarif</a>
+              </div>
+            </li>
 
             <li class="nav-item dropdown">
               <a href="/contact" class="nav-link">Contact</a>
             </li>
-
             {{#if user}}
+
+            {{#if admin}}
             <li class="nav-item">
             <a class="nav-link" href="/articles/add">Ajouts&nbsp;événement</a> 
             </li>
-
-            <li class="nav-item">
-            <a class="nav-link" href="/galerie/add">Photo</a>
-            </li>
-
-            <li class="nav-item">
+            {{/if}}
+             <li class="nav-item">
             <a class="nav-link" href="/user/logout">Déconnexion</a>
             </li>
+            
 
             {{else}}
             <li class="nav-item">

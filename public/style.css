@@ -16,7 +16,7 @@ html {
               HEADER/BARNAV
 =============================================*/ 
 
-/* Architecture de la Navbar*/
+/* Architecture de la Navbar */
 header {
   width: 100%;
   margin: 0 auto;
@@ -28,7 +28,7 @@ header {
   height: 22.5rem;
 }
 
-/*Emplacement du text-nav*/
+/* Emplacement du text-nav */
 .text-nav {
   display: block;
   text-align: center;
@@ -36,40 +36,56 @@ header {
   padding-top: 5rem;
 }
 
-/*Couleur texte Navbar (brand)*/
+/* Couleur texte Navbar (brand) */
 .navbar-light .navbar-brand {
   color: white;
 }
 
-/*Taille d'écriture "BIENVENUE"*/
+/* Taille d'écriture "BIENVENUE" */
 .navbar-brand {
   font-size: 30px;
 }
 
-/* Couleur text Navbar (hors navbar-brand)*/
+/* Couleur text Navbar (hors navbar-brand) */
 .navbar-light .navbar-nav .nav-link {
   color: white;
 }
-/*Couleur text Navbar passage souris*/
+/*Couleur text Navbar passage souris */
 .navbar-dark .navbar-nav .nav-link {
   color: black;
 }
-/*Taille d'écriture de la Navbar*/
+/*Taille d'écriture de la Navbar */
 .navbar-expand-md {
   font-size: 20px;
 } 
+
+/* BACKGROUND TOGGLE ICON*/
+.navbar-light .navbar-toggler {
+  background: rgba(255,255,255,0.5);
+}
+
+.dropdown-menu {
+  background-color: rgba(255,255,255,0.4);
+}
+
+/* Couleur text et background au passage de la souris (drop-item) */
+.dropdown-item:focus, .dropdown-item:hover {
+  color:white;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.7);
+}
 
 /*=================================================
                       BODY/EVENEMENT
 ==================================================*/ 
 
-/*Parallax*/
+/* Parallax */
 .parallax-window {
   min-height: 400px;
   background: transparent;
 }
 
-/*Partie section*/
+/* Partie section */
 section {
   background-image: url(./images/paysage.jpg);
   background-repeat: no-repeat;
@@ -78,20 +94,20 @@ section {
   padding-bottom: 2rem;
 }
 
-/*Architecture container evenement*/
+/* Architecture container evenement */
 .container {
   display: flex;
   flex-direction: row;
   padding-top: 5rem;
 }
-/*Taille de card affiché*/
+/* Taille de card affiché */
 .card {
   height: 70rem;
   width: 30rem;
   text-align: center;
   margin: 0 auto;
 }
-/*Controle de la taille d'image*/
+/* Controle de la taille d'image */
 .card-img-top {
   height: 35%;
   width: 100%;
@@ -215,7 +231,6 @@ position:absolute;
 .wrapper {
   max-width: 700px;
   margin: 50px auto;
-  /* background: #4e9fe2; */
   background: radial-gradient(circle, #b1b9bb, #afb7b8, #aeb4b5, #acb2b2, #abafaf, #9b9e9d, #8c8e8c, #7d7e7c, #5e5d5c, #3f3e3d, #222222, #000000);
   box-sizing: border-box;
   padding: 40px;
@@ -427,9 +442,30 @@ footer {
 
 
 /*=================================================
-                      Add article
+                      AJOUT article
 =================================================*/
 /* TAILLE TEXT AREA */
 textarea.form-control {
   height: 25rem;
+}
+/* COULEUR ICON UPLOAD*/
+.btn-link {
+  color: #343a40 ;
+}
+.btn-link:hover {
+  color: #fff;
+}
+/* TAILLE ICON UPLOAD */
+.svg-inline--fa.fa-cloud-upload-alt.fa-w-20 {
+  font-size: 3rem;
+}
+
+/*=================================================
+                      AJOUT photo
+=================================================*/
+
+.container.photo-add {
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
 }

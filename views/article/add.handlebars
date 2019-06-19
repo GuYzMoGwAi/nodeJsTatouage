@@ -5,7 +5,7 @@
         style="margin: 0 auto;">
         <div class="form-group">
             <label for="exampleFormControlInput1">Titre de l'évènement</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" name="title" placeholder="">
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="title" >
         </div>
         <div class="form-group" style="width: 4 0rem;">
             <label for="exampleFormControlTextarea1">Ajouter du contenu</label>
@@ -21,22 +21,13 @@
             </div>
         </div>
         <div class="file" style="text-align: center; border-radius:">
-             <label class="file-label">
-                <input class="file-input" type="file" name="image">
-                <span class="file-cta">
-                    <span class="file-icon">
-                    </span><br>
-                    <span class="file-label">
-                        Image obligatoire
-                        <i class="fas fa-upload"></i>
-                    </span>
-                </span>
-            </label> 
+             <label class="btn-link">
+                 <i class="fas fa-cloud-upload-alt"></i><br> Choisir une image<input type="file" style="display: none" name="image" required >
+               </label>
         </div><br>
         <div class="field is-grouped">
             <div class="control" style="text-align: center;">
                 <button class="btn btn-dark">Envoyer</button>
-            
                 <input type=button class="btn btn-dark" onclick=window.location.href="/" ; value=Annuler />
                 {{!-- <button class="button is-text">Annuler</button> --}}
             </div>

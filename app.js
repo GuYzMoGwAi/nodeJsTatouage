@@ -20,7 +20,7 @@ const app = express();
 //     .catch(err => console.log(err));
 // MONGOOSE CONNECT =====================================
 const mongoStore = MongoStore(expressSession)
-mongoose.connect('mongodb+srv://blog:QV1cpLkwrEkO9eZH@blog-afur9.mongodb.net/test?retryWrites=true', {useNewUrlParser: true , useCreateIndex: true})
+mongoose.connect('mongodb://localhost:27017/blog', {useNewUrlParser: true , useCreateIndex: true})
 
 // mongodb+srv://blog:QV1cpLkwrEkO9eZH@blog-afur9.mongodb.net/test?retryWrites=true
 app.use(connectFlash())
@@ -38,6 +38,12 @@ app.use(fileupload());
 // MIDDLEWARE AUTH ======================================
 const auth = require("./middleware/auth")
 const redirectAuthSuccess = require("./middleware/redirectAuthSucess")
+const isAdmin = require ('./middleware/isAdmin')
+// MIDDLEWARE ===========================================
+const articleValidPost = require("./middleware/articleValidPost")
+app.use("/articles/post", articleValidPost);
+app.use("./articles/add", auth);
+app.use(isAdmin);
 
 // HANDLEBARS =========================================
 var Handlebars = require("handlebars");
@@ -88,10 +94,7 @@ app.use(bodyParser.urlencoded({
 // ROUTES ===============================================
 app.get("/", homepage);
 
-// MIDDLEWARE ===========================================
-const articleValidPost = require("./middleware/articleValidPost")
-app.use("/articles/post", articleValidPost);
-app.use("./articles/add", auth);
+
 
 
 

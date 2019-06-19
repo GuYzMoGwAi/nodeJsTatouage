@@ -17,7 +17,8 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, "Le password est obligatoire"]
     },
-})
+    isAdmin: {type: Boolean, default: false}
+});
 
 UserSchema.pre("save", function (next) {
     const user = this
@@ -28,6 +29,5 @@ UserSchema.pre("save", function (next) {
     })
 
 })
-
 
 module.exports = mongoose.model("User", UserSchema)

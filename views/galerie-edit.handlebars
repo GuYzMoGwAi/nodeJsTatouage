@@ -2,7 +2,7 @@
 
 <section class="section">
     <div class="container is-fullhd">
-        <form class="form-field" action="/galerie-edit/{{image.name}}" method="POST" enctype="multipart/form-data">
+        <form class="form-field" action="/galerie/edit/{{galerie.id}}" method="POST" enctype="multipart/form-data">
             <div class="container edit-galerie">
             <h2>Modifier ou Supprimer</h2>
                 <div class="form-field evenement">
@@ -14,7 +14,7 @@
                 </div>
                 <div class="file">
                     <label class="file-label">
-                        <input class="file-input" type="file" name="image" value="{{image}}">
+                        <input class="file-input" type="file" name="image" value="{{image}}" required >
                         <span class="file-cta">
                             <span class="file-icon">
                             </span><br><br>
