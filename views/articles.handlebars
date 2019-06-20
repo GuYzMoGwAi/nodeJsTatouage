@@ -1,5 +1,5 @@
 {{>navbar}}
-<section>
+{{!-- <section>
     <div class="container pageedit">
         <h2 class="title-add">{{article.title}}</h2>
         <p class="img"><img src="{{article.image}}" /></p>
@@ -10,18 +10,39 @@
         </div>  
          
         </div>
-        {{#if user}}
+        {{#if admin}}
          <div class="control"> 
             <a href="/article-edit/{{article._id}} {{image}}"><button type="button"
                     class="btn">Editer</button></a>
             <a href="/article-delete/{{article._id}}"><button type="button"
                     class="btn">supprimer</button></a>
                     <input class="btn" type=button onclick=window.location.href='localhost:3050'; value=Annuler />
-                    {{!-- <button class="button is-text">Annuler</button> --}}
+                    
         {{/if}}
                 
          </div>
     </div>   
+</section>--}}
+<section>
+  <div class="container" style="margin: 0 auto; justify-content: center;">
+    <div class="block col-xs-6">
+      <h2 class="title-add">{{article.title}}</h2>
+      <div style="text-align: center;"><img class="card-img img-responsive" src="{{article.image}}" alt="Card image">
+          <p>{{{article.content}}}</p>
+          <div class="date">
+            <p>Publié par {{auteur}}, le {{moment creatDate format="DD-MM-YY"}}</p>
+          </div>
+        </div> 
+    </div>
+  </div>
+  {{#if admin}}
+         <div class="control" style="text-align: center;"> 
+            <a href="/article-edit/{{article._id}} {{image}}"><button type="button"
+                    class="btn btn-dark">Editer</button></a>
+            <a href="/article-delete/{{article._id}}"><button type="button"
+                    class="btn btn-dark">supprimer</button></a>
+                    {{!-- <input class="btn btn-dark" type=button onclick=window.location.href='localhost:3050'; value=Annuler /> --}}
+         </div>            
+        {{/if}}                
 </section>
-          
-
+{{>footer}}

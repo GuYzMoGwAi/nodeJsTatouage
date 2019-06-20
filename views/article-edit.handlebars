@@ -1,6 +1,5 @@
 
-{{>navbar}}
-
+{{!-- 
 <section class="section">
     <div class="container is-fullhd">
         <form class="form-field" action="/article/edit/{{article.id}}" method="POST" enctype="multipart/form-data">
@@ -51,10 +50,51 @@
                     </div>
                     <div class="control">
                         <input type=button onclick=window.location.href='http://localhost:3050'; value=Annuler />
-                        {{!-- <button class="button is-text">Annuler</button> --}}
+                        <button class="button is-text">Annuler</button>
                     </div>
                 </div>
             </div>
         </form>
     </div>
+</section> --}}
+{{>navbar}}
+<section>
+<div class="container">
+    <form class="form-field" action="/article/edit/{{article.id}}" method="POST" enctype="multipart/form-data"
+        style="margin: 0 auto;">
+        <h2>Modification de l'article</h2>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Titre de l'évènement</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="title" value="{{article.title}}" >
+        </div>
+        <div class="form-group" style="width: 4 0rem;">
+            <label for="exampleFormControlTextarea1">Ajouter du contenu</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content">{{article.content}}</textarea>
+            <script>
+                CKEDITOR.replace('content');
+            </script>
+        </div>
+        <div class="form-group">
+            <label class="label">Auteur</label>
+            <div class="control">
+                <input class="form-control" type="text" name="auteur">
+            </div>
+        </div>
+        <div class="file" style="text-align: center; border-radius:">
+             <label class="btn-link">
+                 <i class="fas fa-cloud-upload-alt"></i><br> Choisir une image<input type="file" style="display: none" name="image" required="required" >
+               </label>
+        </div><br>
+        <div class="field is-grouped">
+            <div class="control" style="text-align: center;">
+                <button type="submit" class="btn btn-dark">Envoyer</button>
+                <input type="button" class="btn btn-dark" onclick=window.location.href="/articles/{{article._id}}" ; value=Annuler />
+                <input class="input" type="hidden" name="articleId" value={{article.id}}>
+                {{!-- <button class="button is-text">Annuler</button> --}}
+            </div>
+        </div>
+    </form>
+</div>
 </section>
+
+{{>footer}}

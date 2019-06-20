@@ -37,17 +37,15 @@
 {{!-- <label class="file-label photo"><input class="file-input" type="file" name="image"><span class="file-cta"><span class="file-icon"><i class="fas fa-upload"></i></span><span class="file-label">Choisir son image</span></span></label> --}}
 <div id="galerie">
   {{#each imgGal}}
-  <img src="{{image}}" alt="ton image" style="cursor:pointer;"
-    onclick="javascript:window.location.replace('/galerie-edit/{{_id}}')" />
+  <img src="{{image}}" alt="ton image" style="cursor:pointer;" onclick="javascript:window.location.replace('/galerie-edit/{{_id}}')" />
   {{/each}}
-  
-  {{#if admin}}
+   {{#if admin}}
   <div class="container photo-add">
     <form class="form-field add-photo" action="/galeries/post {{galerie.id}}" method="POST"
       enctype="multipart/form-data">
       <div class="file">
         <label class="btn-link">
-          <i class="fas fa-cloud-upload-alt"></i><br> Choisir une image<input type="file" style="display: none"name="pau" required>
+          <i class="fas fa-cloud-upload-alt"></i><br> Choisir une image<input type="file" style="display: none" name="image" required>
         </label>
         <div class="field is-grouped">
           <div class="control">
@@ -59,6 +57,8 @@
   </form>
 </div>
 {{/if}}
+  
+
 </div>
 </div>
 

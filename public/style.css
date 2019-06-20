@@ -12,6 +12,10 @@ html {
   height: 100vh;
 }
 
+h2 {
+  text-align: center;
+}
+
 /*=============================================
               HEADER/BARNAV
 =============================================*/ 
@@ -106,6 +110,7 @@ section {
   width: 30rem;
   text-align: center;
   margin: 0 auto;
+  border: none;
 }
 /* Controle de la taille d'image */
 .card-img-top {
@@ -143,13 +148,12 @@ section {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  /* background-image: url(../images/Kraken2.jpeg); */
   background-color: #bfbfbf;
-  border-radius: 10px;
+  border-radius: 20px;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0 15rem 15px 15rem;
+  margin: 0 15rem 5rem 15rem;
 }
 
 #galerie img {
@@ -208,7 +212,7 @@ position:absolute;
 ==============================*/
 
 .contactcontainer {
-  background-image: url(../images/k4.jpg);
+  /* background-image: url(../images/k4.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -216,7 +220,7 @@ position:absolute;
 
 .container.contactcontainer {
   padding-top: 1rem;
-  margin: 2rem auto;
+  margin: 0 auto;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
@@ -458,6 +462,17 @@ textarea.form-control {
 /* TAILLE ICON UPLOAD */
 .svg-inline--fa.fa-cloud-upload-alt.fa-w-20 {
   font-size: 3rem;
+}
+
+/*==========================================
+        Date/photo view article
+==========================================*/
+.date{
+  float: right;
+}
+.card-img.img-responsive {
+  max-width: 40rem;
+  max-height: 40rem;
 }
 
 /*=================================================

@@ -9,28 +9,19 @@
                     <div class="control">
                         <input class="input" type="hidden" name="galerieId" value={{galerie.id}}>
                         <input class="input" type="hidden" name="deleteGalerieId" value={{galerie.id}}>
-                        
                     </div>
                 </div>
-                <div class="file">
-                    <label class="file-label">
-                        <input class="file-input" type="file" name="image" value="{{image}}" required >
-                        <span class="file-cta">
-                            <span class="file-icon">
-                            </span><br><br>
-                            <span class="file-label">
-                                Choisir son image
-                                <i class="fas fa-upload"></i>
-                            </span>
-                        </span>
-                    </label>
-                </div><br>
+               <div class="file" style="text-align: center; border-radius:">
+             <label class="btn-link">
+                 <i class="fas fa-cloud-upload-alt"></i><br> Choisir une image <input type="file" style="display: none" name="image" required >
+               </label>
+        </div><br>
 
                 <div class="field is-grouped">
                     <div class="control">
                         <button class="button is-link">Enregistrer</button>
                     </div>
-                    {{#if user}}
+                    {{#if admin}}
 
 
                      <div class="control">

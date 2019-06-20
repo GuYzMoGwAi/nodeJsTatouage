@@ -2,13 +2,13 @@
 
 <section>
     <div class="container pageedit">
-        <p class="img"><img src="{{galerie.image}}" /></p>
+        <p class="img"><img src="{{galerie.image}}" name="image"/></p>
     </div>
-    {{#if user}}
+    {{#if admin}}
     <div class="control">
         <a href="/galerie-edit/{{galerie._id}} {{image}}"><button type="button" class="btn">Editer</button></a>
         <a href="/galerie-delete/{{galerie._id}}"><button type="button" class="btn">supprimer</button></a>
-        <input class="btn" type=button onclick=window.location.href='http://localhost:3050' ; value=Annuler />
+        {{!-- <input type=button onclick=window.location.href='localhost:3050' value=Annuler /> --}}
         {{!-- <button class="button is-text">Annuler</button> --}}
         {{/if}}
 
