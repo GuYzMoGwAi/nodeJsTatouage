@@ -12,7 +12,7 @@ module.exports = (req, res) => {
              image: `/images/${image.name}`
          }
          , (error, post) => {
-         res.redirect("/")
+         res.redirect("/#galerie")
          })
         })
     }

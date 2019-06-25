@@ -16,6 +16,10 @@ h2 {
   text-align: center;
 }
 
+path {
+  color: #000000;
+}
+
 /*=============================================
               HEADER/BARNAV
 =============================================*/ 
@@ -83,11 +87,11 @@ header {
                       BODY/EVENEMENT
 ==================================================*/ 
 
-/* Parallax */
+/* Parallax
 .parallax-window {
   min-height: 400px;
   background: transparent;
-}
+} */
 
 /* Partie section */
 section {
@@ -169,14 +173,6 @@ section {
   transition: transform 2s;
 }
 
-.supp {
-  display: none;
-}
-
-#galerie img:hover .supp:hover {
-  display: block;
-position:absolute;
-}
 
 #galerie img:hover {
   transform-origin: 50% 50%;
@@ -184,24 +180,6 @@ position:absolute;
   z-index: 999;
   border-radius: 10px;
 }
-
-.machin {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 20rem;
-}
-
-.btn-galerie {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.5s ease;
-}
-.btn-galerie.btn-galerie:hover {
-  background: rgba(129, 124, 124, 0.664);
-  color: #ffffff;
-}
-
-
 
 /*============================================================
                             CONTACT
@@ -283,6 +261,15 @@ h1 {
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+}
+
+.form-group {
+  max-height: 24rem;
+}
+
+.form-field {
+  width: 60rem;
+  margin: 0 auto;
 }
 
 .form-title {
@@ -483,4 +470,40 @@ textarea.form-control {
   justify-content: center;
   text-align: center;
   padding: 10px;
+}
+
+/*================================================
+                COMMENTAIRE
+================================================*/
+
+.container.commentaire {
+  background-image: url(./images/k4.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.container.test {
+  justify-content: center;
+}
+
+.row.bootstrap.snippets {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+.row {
+  margin: 0 auto;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+      border-top-color: currentcolor;
+      border-top-style: none;
+      border-top-width: 0px;
+  border-top: 1rem solid rgba(0,0,0,.1);
 }

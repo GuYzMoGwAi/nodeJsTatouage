@@ -66,26 +66,31 @@ app.use("*", (req, res, next) => {
 
 // *Controller
 const homepage = require("./controllers/homepage")
-//* ARTICLE =============================================
+// ARTICLE ===============================================
 const articleAddcontroller = require("./controllers/articleAdd")
 const articleSinglecontroller = require("./controllers/articleSingle")
 const articlePostcontroller = require("./controllers/articlePost")
 const articleEdit = require ("./controllers/articleEdit")
 
-//* USER ===============================================
+// COMMENTAIRE ============================================
+const commentaireAddcontroller = require ("./controllers/commentaireAdd")
+const commentairePostcontroller = require ("./controllers/commentairePost")
+
+
+// Galerie ================================================
+const galerieAddcontroller = require ("./controllers/galerieAdd")
+const galerieSinglecontroller = require ("./controllers/galerieSingle")
+const galeriePostcontroller = require ("./controllers/galeriePost")
+const galerieEdit = require ("./controllers/galerieEdit")
+
+// USER ==================================================
 const userCreate = require("./controllers/userCreate")
 const userRegister = require("./controllers/userRegister")
 const userLogin = require ("./controllers/userLogin")
 const userLoginAuth = require("./controllers/userLoginAuth")
 const userLogout = require ('./controllers/userLogout')
 
-// Galerie
-const galerieAddcontroller = require ("./controllers/galerieAdd")
-const galerieSinglecontroller = require ("./controllers/galerieSingle")
-const galeriePostcontroller = require ("./controllers/galeriePost")
-const galerieEdit = require ("./controllers/galerieEdit")
-
-// BODYPARSER ===========================================
+// BODYPARSER =============================================
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
@@ -95,6 +100,9 @@ app.use(bodyParser.urlencoded({
 app.get("/", homepage);
 
 
+// COMMENTAIRES =========================================
+app.get ("/commentaire/add", auth, commentaireAddcontroller)
+app.post ("/commentaires/post", auth, commentairePostcontroller)
 
 
 
@@ -161,8 +169,15 @@ app.post('/galerie/edit/:id', function(req,res){
     app.get('/galerie-delete/:id', function (req, res) {
            const Galerie = require('./database/models/Galerie')
            Galerie.findByIdAndRemove({_id: req.params.id}).then(function(galerie){})
-    res.redirect('/');
+    res.redirect('/#galerie');
 });
+
+// DELETE COMMENTAIRE ====================================
+app.get ('/commentaire-delete/:id', function (req, res) {
+    const Commentaire = require ('./database/models/Commentaire')
+    Commentaire.findByIdAndRemove({_id: req.params.id}).then(function(commentaire){})
+        res.redirect('/')
+    });
 
 
 // USERS ================================================

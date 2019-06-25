@@ -1,46 +1,27 @@
 {{>navbar}}
 
-<section class="section">
-    <div class="container is-fullhd">
+<section class="justify-content-center" style="padding-top: 2rem; text-align: center;">
+    
         <form class="form-field" action="/galerie/edit/{{galerie.id}}" method="POST" enctype="multipart/form-data">
-            <div class="container edit-galerie">
-            <h2>Modifier ou Supprimer</h2>
                 <div class="form-field evenement">
                     <div class="control">
                         <input class="input" type="hidden" name="galerieId" value={{galerie.id}}>
                         <input class="input" type="hidden" name="deleteGalerieId" value={{galerie.id}}>
                     </div>
                 </div>
-               <div class="file" style="text-align: center; border-radius:">
-             <label class="btn-link">
-                 <i class="fas fa-cloud-upload-alt"></i><br> Choisir une image <input type="file" style="display: none" name="image" required >
-               </label>
-        </div><br>
+                <img class="card-img img-responsive" style="border-radius: 1rem; padding-bottom:1rem;" src="{{galerie.image}}" alt="Card image">
 
-                <div class="field is-grouped">
-                    <div class="control">
-                        <button class="button is-link">Enregistrer</button>
-                    </div>
+                <div class="field is-grouped" style="padding-bottom: 1rem;">
                     {{#if admin}}
-
-
-                     <div class="control">
-                        {{!-- <a href="/galerie-edit/{{galerie._id}} {{image}}"><button type="button"
-                                class="btn">Editer</button></a> --}}
+                     <div class="control" style="padding-top: 1rem;"> 
                         <a href="/galerie-delete/{{galerie._id}}"><button type="button"
                                 class="btn">supprimer</button></a>
-                        <input class="btn" type=button onclick=window.location.href='http://localhost:3050' ;
-                            value=Annuler />
-                        {{!-- <button class="button is-text">Annuler</button> --}}
                         {{/if}}
-                    {{!-- <div class="control">
-                        <input type=button onclick=window.location.href='http://localhost:3050/'; value=Annuler />
-                        <button class="button is-text">Annuler</button> 
-                    </div> --}}
+                        </a><input class="btn" type=button onclick=window.location.href='/#galerie' ;
+                            value=Annuler />
                 </div>
             </div>
         </form>
-    </div>
-</section>
+        
 
 {{>footer}}

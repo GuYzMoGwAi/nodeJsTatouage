@@ -3,6 +3,11 @@ const mongoose = require("mongoose")
 
 const UserSchema = new mongoose.Schema({
 
+    pseudo: {
+        type: String,
+        required: [true, "Le pseudo est obligatoire"]
+    },
+
     name: {
         type: String,
         required: [true, "Le nom est obligatoire"]
