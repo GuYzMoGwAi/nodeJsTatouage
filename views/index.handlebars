@@ -31,7 +31,6 @@
  ===========================================-->
 <div class="flex-container">
   <h1 class="h1photos">Galerie Photo</h1>
-
 </div>
 {{!-- <label class="file-label photo"><input class="file-input" type="file" name="image"><span class="file-cta"><span class="file-icon"><i class="fas fa-upload"></i></span><span class="file-label">Choisir son image</span></span></label> --}}
 <div id="galerie">
@@ -65,7 +64,7 @@
 ================================================-->
 
 {{#if user}}
-<section>
+<section id="commentaire">
   <form class="form-field" action="/commentaires/post/{{commentaire.id}}" method="POST"  enctype="multipart/form-data"
     style="margin: 0 auto;">
     <div class="form-field evenement">
@@ -74,9 +73,7 @@
         <input class="input" type="hidden" name="deleteCommentaireId" value={{commentaire.id}}>
       </div>
     </div>
-    <p class="lead font-weight-bold" style="text-align: center; padding-top: 1rem; color: white;" name="title">Si vous
-      voulez me
-      laisser un message</p>
+    <p class="lead font-weight-bold" style="text-align: center; padding-top: 1rem; color: white;" name="title">Si vous voulez me laisser un message</p>
     <div class="form-group" style="padding-top: 10px">
       <label for="textarea"></label>
       <textarea class="form-control" name="content"></textarea>
@@ -90,13 +87,16 @@
         <input class="form-control" type="text" name="auteur" placeholder="auteur">
       </div>
     </div>
-    <button class="btn" type="submit">Envoyer</button>
+    
+    <a href="#commentaire"><button class="btn" type="submit">Envoyer</button></a>
+    {{!-- <a href="/#test/{{_id}}"><button type="button" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button></a> --}}
   </form>
   <br>
 
 </section>
 {{/if}}
 <section class="commentaire" id="test">
+  <h1 class="h1-commentaire">Liste des commentaires</h1>
   <div class="row bootstrap snippets" style="justify-content: center;">
     {{#each commentaire}}
     <div class="container test">
@@ -104,20 +104,22 @@
         <div class="comment-wrapper">
           <div class="panel panel-info">
             <div class="panel-body">
-              <div class="clearfix">
+              <div class="clearfix" style="width: 35rem;">
                 <hr>
                 <ul class="media-list">
-                  <li class="media">
+                  <li class="media" style="width: 35rem;">
                     <div class="media-body" style="text-align: center;">
-                      <strong class="text-light bg-dark" style="display: flex; width: 12rem;">@{{auteur}}, le
+                      <strong class="text-light bg-dark" style="display: flex; width: 12rem;">@{{auteur}}, le 
                         {{moment creatDate format="DD-MM-YY"}}</strong>
 
                       <p>{{{content}}}</p>
                     </div>
                     {{!-- <div><i class="fas fa-trash-alt"></i></div> --}}
+                    {{#if ../admin}}
                     <div class="control" style="padding-top: 1rem;">
                       <a href="/#test/{{_id}}"><button type="button" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button></a>
                     </div>
+                    {{/if}}
                   </li>
               </div>
               </ul>

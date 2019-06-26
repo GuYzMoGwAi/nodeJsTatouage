@@ -22,7 +22,9 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, "Le password est obligatoire"]
     },
-    isAdmin: {type: Boolean, default: false}
+    isAdmin: {
+        type: Boolean, default: false
+    }
 });
 
 UserSchema.pre("save", function (next) {

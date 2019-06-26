@@ -17,7 +17,10 @@ h2 {
 }
 
 path {
-  color: #000000;
+  color: #1a1a1e;
+}
+path:hover {
+  color: gray;
 }
 
 /*=============================================
@@ -110,7 +113,7 @@ section {
 }
 /* Taille de card affiché */
 .card {
-  height: 70rem;
+  height: 65rem;
   width: 30rem;
   text-align: center;
   margin: 0 auto;
@@ -475,6 +478,11 @@ textarea.form-control {
 /*================================================
                 COMMENTAIRE
 ================================================*/
+
+.h1-commentaire {
+  margin: 0 auto;
+  padding: 4rem 0 0 0;
+}
 
 .container.commentaire {
   background-image: url(./images/k4.jpg);

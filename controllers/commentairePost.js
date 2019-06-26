@@ -7,7 +7,7 @@ module.exports = (req, res) => {
              ...req.body,
          }
          , (error, post) => {
-         res.redirect("/")
+         res.redirect("/#commentaire")
          })
         }
     

@@ -49,6 +49,7 @@ app.use(isAdmin);
 var Handlebars = require("handlebars");
 var MomentHandler = require("handlebars.moment");
 MomentHandler.registerHelpers(Handlebars);
+
 app.use(express.static('public'));
 
 app.engine('handlebars', exphbs({
@@ -102,7 +103,7 @@ app.get("/", homepage);
 
 // COMMENTAIRES =========================================
 app.get ("/commentaire/add", auth, commentaireAddcontroller)
-app.post ("/commentaires/post", auth, commentairePostcontroller)
+app.post ("/commentaires/post", auth ,commentairePostcontroller)
 
 
 
