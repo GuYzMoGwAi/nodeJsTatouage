@@ -6,9 +6,9 @@ module.exports = (req, res) => {
                 const registerError = Object.keys(error.errors).map(key => error.errors[key].message);
                 req.flash("registerError", registerError)
                 req.flash("data", req.body)
-                return res.redirect("/#darkModalForm2")
+                return res.redirect("/")
             }
-            res.redirect("/")
+            res.redirect("/#darkModalForm")
         }
     )
 }

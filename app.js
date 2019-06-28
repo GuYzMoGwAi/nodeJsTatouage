@@ -67,6 +67,7 @@ app.use("*", (req, res, next) => {
 
 // *Controller
 const homepage = require("./controllers/homepage")
+const homeAdmin = require ("./controllers/homeAdmin")
 // ARTICLE ===============================================
 const articleAddcontroller = require("./controllers/articleAdd")
 const articleSinglecontroller = require("./controllers/articleSingle")
@@ -99,6 +100,7 @@ app.use(bodyParser.urlencoded({
 
 // ROUTES ===============================================
 app.get("/", homepage);
+app.get ("/adminPage", homeAdmin )
 
 
 // COMMENTAIRES =========================================
@@ -175,10 +177,10 @@ app.post('/galerie/edit/:id', function(req,res){
 
 // DELETE COMMENTAIRE ====================================
 app.get ('/commentaire-delete/:id', function (req, res) {
-    const Commentaire = require ('./database/models/Commentaire')
-    Commentaire.findByIdAndRemove({_id: req.params.id}).then(function(commentaire){})
-        res.redirect('/')
-    });
+        const Commentaire = require ('./database/models/Commentaire')
+        Commentaire.findByIdAndRemove({_id: req.params.id}).then(function(commentaire){})
+    res.redirect('/#liste');
+});
 
 
 // USERS ================================================

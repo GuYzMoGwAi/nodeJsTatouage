@@ -7,9 +7,9 @@ module.exports = (req, res, next) => {
         }
         next()
     })
-    // verifier le user
-    //si il est dans la b.d.
-    //sinon tu le rediriges
+    // Verification si l'utilisateur est connecté
+    //si il est dans la b.d. ok !
+    //sinon tu le rediriges vers register si il a pas de compte sinon login.
 
 
 }

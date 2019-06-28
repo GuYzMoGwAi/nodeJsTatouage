@@ -17,16 +17,18 @@
         <ul class="nav navbar-nav">
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Portfolio</a>
+              {{#unless admin}}
+              {{!-- <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Portfolio</a>
               <div class="dropdown-menu dropdown-menu">
                 <a href="#" class="dropdown-item">Compétences</a>
                 <a href="#" class="dropdown-item">Experience</a>
-              </div>
+              </div> --}}
             </li>
             <li class="nav-item dropdown">
               <a href="#" class="nav-link  dropdown-toggle" data-toggle="dropdown">Présentation</a>
               <div class="dropdown-menu dropdown-menu">
                 <a href="https://syndicat-national-des-artistes-tatoueurs.assoconnect.com/page/86339-reglementation" class="dropdown-item">Hygiène</a>
+                <a href="#" class="dropdown-item">Horaire</a>
                 <a href="#" class="dropdown-item">Tarif</a>
               </div>
             </li>
@@ -34,14 +36,21 @@
             <li class="nav-item dropdown">
               <a href="/contact" class="nav-link">Contact</a>
             </li>
+            {{/unless}}
             {{#if user}}
+            {{#unless admin}}
              <li class="nav-item">
                <a  class="nav-link" href="/#commentaire">Un avis ?</a>
              </li>
+             {{/unless}}
       
             {{#if admin}}
             <li class="nav-item">
             <a class="nav-link" href="/articles/add">Ajouter un événement</a> 
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/adminPage">Administration</a>
             </li>
             
 

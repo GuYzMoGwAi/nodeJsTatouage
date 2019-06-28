@@ -1,51 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-  <title>Nolink</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Service numérique dédiée à l’innovation, à la formation et au développement de la culture numérique.">
-
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-  <link rel="stylesheet" href="/style.css">
-
-  <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <script src="//cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
-  
-</head>
-
-<body>
-
+{{>head}}
 
 {{{body}}}
 {{>login}}
 {{>register}}
-{{!-- {{>script}} --}}
+{{>script}}
 
-</body>
 
-<script>
-{{!----- Script limit text ----}}
-{{!-- Text item article Blog --}}
-    var p = $('#dash p');
-    var ks = $('#dash').height();
-    while ($(p).outerHeight() > ks) {
- $(p).text(function(index, text) {
-   return text.replace(/\W*\s(\S)*$/, '...');
- });
-}
-</script>
 
- <!--Charge js libs uniquement lorsque la page est chargée. -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="assets/js/modernizr.custom.72241.js"></script>
-    <!-- Scripts de modèles personnalisés -->
-    <script src="./public/js/magister.js"></script>
-
-        <!-- SCRIPT PARALLAX-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="/path/to/parallax.js"></script>

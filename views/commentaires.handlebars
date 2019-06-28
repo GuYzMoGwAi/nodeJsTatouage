@@ -3,7 +3,7 @@
          
     <p class="lead font-weight-bold" style="text-align: center; padding-top: 1rem;" name="title">Si vous voulez me
       laisser un message</p>
-    <form class="form-field" action="/commentaires/post" method="POST" enctype="multipart/form-data"
+    <form class="form-field" action="/commentaires/post{{commentaire.id}}" method="POST" enctype="multipart/form-data"
       style="margin: 0 auto;">
       <div class="form-group" style="padding-top: 10px">
         <label for="textarea" name="content"></label>
