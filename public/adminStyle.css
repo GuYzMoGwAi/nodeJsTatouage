@@ -45,7 +45,7 @@ h1{
   @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
   body{
     background: -webkit-linear-gradient(left, #dddddd, #25b7c4);
-    background: linear-gradient(to right, #000000, #5e6768);
+    background: linear-gradient(to right, #326e8a, #97b7bb);
     font-family: 'Roboto', sans-serif;
   }
   section{
@@ -79,7 +79,7 @@ h1{
   }
   
   
-  /* for custom scrollbar for webkit browser*/
+  for custom scrollbar for webkit browser
   
   ::-webkit-scrollbar {
       width: 6px;
@@ -90,3 +90,51 @@ h1{
   ::-webkit-scrollbar-thumb {
       -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
   }
+
+
+  .tbl-content {
+    height: auto;
+  }
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+
+  /* Forcer le tableau à ne plus être comme un tableau */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  /* Masquer les en-têtes de tableau */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    /* Se comporter comme une "rangée" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+
+  td:before {
+    /* Maintenant, comme un en-tête de tableau */
+    position: absolute;
+    /*Les valeurs haut / gauche imitent le remplissage*/
+          top: 6px;
+          left: 6px;
+          width: 45%;
+          padding-right: 10px;
+          white-space: nowrap;
+      }
+}
