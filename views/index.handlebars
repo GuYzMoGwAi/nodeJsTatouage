@@ -46,7 +46,7 @@
       enctype="multipart/form-data">
       <div class="file">
         <label class="btn-link">
-          <i class="fas fa-cloud-upload-alt"></i><br> Choisir une image<input type="file" style="display: none"
+          <i class="fas fa-cloud-upload-alt"></i><input type="file" style="display: none"
             name="image" required>
         </label>
         <div class="field is-grouped">
@@ -90,8 +90,7 @@
   <h1 class="h1-commentaire">Liste des commentaires</h1>
     {{#each commentaire}}
     <div class="container">
-  <div class="row " style="justify-content: center;">
-      <div class="col-md-6 ">
+    <div class="row " style="justify-content: center;">
         <div class="comment-wrapper">
           <div class="panel panel-info">
             <div class="panel-body">
@@ -102,7 +101,6 @@
                     <div class="media-body" style="text-align: center;">
                       <strong class="text-light bg-dark" style="display: flex; width: 12rem;">@{{auteur}}, le 
                         {{moment creatDate format="DD-MM-YY"}}</strong>
-
                       <p>{{{content}}}</p>
                     </div>
                     {{!-- <div><i class="fas fa-trash-alt"></i></div> --}}
@@ -117,7 +115,7 @@
             </div>
           </div>
         </div>
-      </div>
+      
     </div>
     {{/each}}
 <a href="#top"><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top" aria-describedby="tooltip389606">Top</button></a>

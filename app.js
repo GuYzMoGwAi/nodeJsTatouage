@@ -193,7 +193,7 @@ app.get ("/user/logout", userLogout)
 
 // CONTACT ==============================================
 app.get("/contact", function (req, res) {
-    res.render("contact")
+    res.render("contact",)
 })
 
 // ERROR ================================================

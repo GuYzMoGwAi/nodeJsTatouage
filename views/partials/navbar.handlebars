@@ -1,7 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 <!-- =======================================
                     Navbar
 ======================================== -->
@@ -9,84 +5,82 @@
   <nav class="navbar navbar-expand-md navbar-light ">
     <div class="container-fluid">
       <div class="text-nav">
-      <a href="/" class="navbar-brand">Bienvenue</a>
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-      </button><br>
-      <div id="navbarCollapse" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-              {{#unless admin}}
-              {{!-- <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Portfolio</a>
+        <a href="/" class="navbar-brand">Bienvenue</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button><br>
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+
+                {{#unless admin}}
+                {{!-- <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Portfolio</a>
               <div class="dropdown-menu dropdown-menu">
                 <a href="#" class="dropdown-item">Compétences</a>
                 <a href="#" class="dropdown-item">Experience</a>
               </div> --}}
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link  dropdown-toggle" data-toggle="dropdown">Présentation</a>
-              <div class="dropdown-menu dropdown-menu">
-                <a href="https://syndicat-national-des-artistes-tatoueurs.assoconnect.com/page/86339-reglementation" class="dropdown-item">Hygiène</a>
-                <a href="#" class="dropdown-item">Horaire</a>
-                <a href="#" class="dropdown-item">Tarif</a>
-              </div>
-            </li>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link  dropdown-toggle" data-toggle="dropdown">Présentation</a>
+                <div class="dropdown-menu dropdown-menu">
+                  <a href="https://syndicat-national-des-artistes-tatoueurs.assoconnect.com/page/86339-reglementation"
+                    class="dropdown-item">Hygiène</a>
+                  <a href="#" class="dropdown-item">Horaire</a>
+                  <a href="#" class="dropdown-item">Tarif</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="/contact" class="nav-link">Contact</a>
+              </li>
+              {{/unless}}
 
-            <li class="nav-item dropdown">
-              <a href="/contact" class="nav-link">Contact</a>
-            </li>
-            {{/unless}}
-            {{#if user}}
-            {{#unless admin}}
-             <li class="nav-item">
-               <a  class="nav-link" href="/#commentaire">Un avis ?</a>
-             </li>
-             {{/unless}}
-      
-            {{#if admin}}
-            <li class="nav-item">
-            <a class="nav-link" href="/articles/add">Ajouter un événement</a> 
-            </li>
+              {{#if user}}
+              {{#unless admin}}
+              <li class="nav-item">
+                <a class="nav-link" href="/#commentaire">Un avis ?</a>
+              </li>
+              {{/unless}}
 
-            <li class="nav-item">
-              <a class="nav-link" href="/adminPage">Administration</a>
-            </li>
-            
+              {{#if admin}}
+              <li class="nav-item">
+                <a class="nav-link" href="/articles/add">Ajouter un événement</a>
+              </li>
 
-            {{/if}}
-             <li class="nav-item">
-            <a class="nav-link" href="/user/logout">Déconnexion</a>
-            </li>
-            
+              <li class="nav-item">
+                <a class="nav-link" href="/adminPage">Administration</a>
+              </li>
 
-            {{else}}
-            <li class="nav-item">
-            <a class="nav-link" data-toggle="modal" data-target="#darkModalForm" href="#">Connexion</a>
-            </li>
+              {{/if}}
+              <li class="nav-item">
+                <a class="nav-link" href="/user/logout">Déconnexion</a>
+              </li>
 
-            <li class="nav-item">
-            <a class="nav-link" data-toggle="modal" data-target="#darkModalForm2" href="#">Inscription</a>
-            </li>
+              {{else}}
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#darkModalForm" href="#">Connexion</a>
+              </li>
 
-            {{/if}}
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#darkModalForm2" href="#">Inscription</a>
+              </li>
+
+              {{/if}}
             </ul>
           </ul>
-          </div>
+        </div>
 
-          {{!-- <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
-            <div class="dropdown-menu dropdown-menu-right">
-              <a href="#" class="dropdown-item">Reports</a>
-              <a href="#" class="dropdown-item">Settings</a>
-              <div class="dropdown-divider"></div>
-              <a href="/" class="dropdown-item">Logout</a>
-            </div>
-          </li>
-        </ul> --}}
+        {{!-- {{#if user}}
+        {{#unless admin}}
+        <ul style="color: #fff;">
+          <h6><i class="fas fa-user"></i>&ensp;Bienvenue: {{user.pseudo}}</h6> 
+        </ul>
+        {{/unless}}
+        {{/if}} --}}
+
       </div>
   </nav>
   </div>
   </div>
 </header>
+{{>script}}
