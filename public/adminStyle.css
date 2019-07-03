@@ -1,4 +1,14 @@
 
+.navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link {
+
+  color: #fff;
+  font-size: 2rem;
+  border: solid aliceblue;
+  border-radius: 5rem;
+  margin: 5rem;
+}
+
+
 h1 {
     font-size: 30px;
     color: #fff;
@@ -28,7 +38,7 @@ h1 {
     padding: 20px 15px;
     text-align: left;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 1.1rem;
     color: #fff;
     text-transform: uppercase;
   }
@@ -46,15 +56,15 @@ h1 {
   
   
   @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+  section {
+    margin: 5rem auto;
+}
+  
   body{
     font-family: 'Roboto', sans-serif;
-    background-color: black;
+    background-color: #56585c;
   }
 
-  section{
-    margin: 50px;
-  }
-  
   
   .made-with-love {
     margin-top: 40px;
@@ -95,6 +105,10 @@ h1 {
     height: auto;
   }
 
+  /*==========================================
+                  RESPONSIVE TABLEAUX
+ ===========================================*/   
+
 @media only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px) {
 
@@ -122,7 +136,7 @@ h1 {
   td {
     /* Se comporter comme une "rangée" */
     border: none;
-    border-bottom: 1px solid #eee;
+    border-bottom: solid 1px rgb(255, 255, 255);
     position: relative;
   }
 
@@ -136,4 +150,20 @@ h1 {
           padding-right: 10px;
           white-space: nowrap;
       }
+}
+
+
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: .375rem .75rem;
+  font-size: 1.1rem;
 }

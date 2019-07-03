@@ -41,7 +41,7 @@
           <th>Titre</th>
           <th>Contenue</th>
           <th>Date de création</th>
-          <th><i class="fas fa-trash-alt"></i></th>
+          <th><i class="fas fa-trash-alt"></i>&ensp;<i class="fas fa-edit"></i></th>
 
         </tr>
       </thead>
@@ -56,16 +56,16 @@
           <td name="title">{{title}}</td>
           <td name="content">{{{content}}}</td>
           <td name="createDate">&emsp;&emsp;{{moment creatDate format="DD-MM-YY"}}</td>
-          <td name="delete-article"><a href="/galerie-delete/{{galerie._id}}"><button type="button"
-                                class="btn">supprimer</button></a></td>
-                {{!-- <a href="/galerie-delete/{{galerie._id}}"><button type="button"
-                                class="btn">supprimer</button></a> --}}
+          <td name="delete-article"><a href="/article-delete/{{_id}}"><button type="button"
+            class="btn"><i class="fas fa-trash-alt"></i></button></a>
+                                    <a href="/article-edit/{{_id}}"><button type="button"
+            class="btn"><i class="fas fa-edit"></i></button></a></td>
+               
         </tr>
         {{/each}}
       </tbody>
     </table>
   </div>
-  <a><input class="btn" type=button onclick=window.location.href='/' ; value=Retour au site />
     <div class="form-field evenement">
       <div class="control">
         <input class="input" type="hidden" name="galerieId" value={{galerie.id}}>

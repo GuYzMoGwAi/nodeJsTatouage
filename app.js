@@ -77,6 +77,7 @@ const articleEdit = require ("./controllers/articleEdit")
 // COMMENTAIRE ============================================
 const commentaireAddcontroller = require ("./controllers/commentaireAdd")
 const commentairePostcontroller = require ("./controllers/commentairePost")
+const commentaireEditcontroller = require ("./controllers/commentaireEdit")
 
 
 // Galerie ================================================
@@ -106,6 +107,7 @@ app.get ("/adminPage", homeAdmin )
 // COMMENTAIRES =========================================
 app.get ("/commentaire/add", auth, commentaireAddcontroller)
 app.post ("/commentaires/post", auth ,commentairePostcontroller)
+app.get ("/commentaire-edit/:id", commentaireEditcontroller)
 
 
 
@@ -174,6 +176,20 @@ app.post('/galerie/edit/:id', function(req,res){
            Galerie.findByIdAndRemove({_id: req.params.id}).then(function(galerie){})
     res.redirect('/#galerie');
 });
+
+//EDIT COMMENTAIRE ==========================================
+app.post('/commentaire/edit/:id', (req,res) => {
+    const Commentaire = require('./database/models/Commentaire');
+
+           Commentaire.findOneAndUpdate( (error, post) => {
+                   if(error){
+                            console.log(error);
+                           return;
+                   }else{
+                           res.redirect('/#commentaire');
+                   }
+                    });
+            });
 
 // DELETE COMMENTAIRE ====================================
 app.get ('/commentaire-delete/:id', function (req, res) {

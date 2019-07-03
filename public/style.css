@@ -19,8 +19,14 @@ h6{
   padding-top: 1rem;
 }
 
+/* TAILLE TITRE COMMENTAIRE*/
+.lead.font-weight-bold {
+  font-size: 2rem;
+}
+
+
 path {
-  color: #ffffff;
+  color: grey;
 }
 
 path:hover {
@@ -140,7 +146,7 @@ section {
   height: 65rem;
   width: 30rem;
   text-align: center;
-  margin: 0 auto;
+  margin: 1rem auto;
   border: none;
 }
 
@@ -236,6 +242,11 @@ section {
   width: 100%;
 }
 
+.control {
+  display: flex;
+  justify-content: center;
+}
+
 
 /*============================================================
                             CONTACT
@@ -326,11 +337,16 @@ h1 {
 
 .form-group {
   max-height: 24rem;
+  margin-bottom: 2rem;
 }
 
 .form-field {
   width: 60rem;
   margin: 0 auto;
+}
+
+.form-field.evenement {
+  text-align: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -487,7 +503,7 @@ footer {
 }
 
 .copyright {
-  padding: 10px;
+  padding: 5rem;
 }
 
 .copyright a {
@@ -582,6 +598,7 @@ textarea.form-control {
   display: flex;
   justify-content: center;
   color: #343a40;
+  padding-top: 4rem;
 }
 
 .btn-link:hover {
@@ -599,12 +616,19 @@ textarea.form-control {
   justify-content: center;
 }
 
+/*ALIGNEMENT DES BTN ARTICLE-SINGLE*/
+.ed-amin {
+  display: flex;
+  justify-content: center;
+}
+
 /*==========================================
         Date/photo view article
 ==========================================*/
 /* Position date dans le container article*/
 .date {
-  float: right;
+  display: flex;
+  justify-content: end;
 }
 
 /* Taille de la card article*/

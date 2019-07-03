@@ -94,7 +94,7 @@
         <div class="comment-wrapper">
           <div class="panel panel-info">
             <div class="panel-body">
-              <div class="clearfix" style="width: 35rem;">
+    
                 <hr>
                 <ul class="media-list">
                   <li class="media" style="width: 35rem;">
@@ -103,21 +103,23 @@
                         {{moment creatDate format="DD-MM-YY"}}</strong>
                       <p>{{{content}}}</p>
                     </div>
-                    {{!-- <div><i class="fas fa-trash-alt"></i></div> --}}
-                    {{#if ../admin}}
-                    <div class="control" style="padding-top: 1rem;">
-                      <a href="/commentaire-delete/{{_id}}"><button type="button" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button></a>
-                    </div>
-                    {{/if}}
+    
                   </li>
               </div>
               </ul>
-            </div>
+            
           </div>
         </div>
       
     </div>
+     {{#if ../admin}}
+                    <div class="control" style="padding-top: 1rem;">
+                      <a href="/commentaire-delete/{{_id}}"><button type="button" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button></a>&emsp;
+                      <a href="/commentaire-edit/{{_id}}"><button type="button" class="btn btn-dark"><i class="fas fa-edit"></i></button></a>
+                    </div>
+                    {{/if}}
     {{/each}}
+    
 <a href="#top"><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top" aria-describedby="tooltip389606">Top</button></a>
   </div>
 </section>

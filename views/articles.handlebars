@@ -5,14 +5,15 @@
       <h2 class="title-add">{{article.title}}</h2>
       <div style="text-align: center;"><img class="card-img img-responsive" src="{{article.image}}" alt="Card image">
           <p>{{{article.content}}}</p>
-          <div class="date">
+        <div class="date">
             <p>Publié par {{auteur}}, le {{moment creatDate format="DD-MM-YY"}}</p>
           </div>
         </div> 
     </div>
   </div>
+  <br>
   {{#if admin}}
-         <div class="control" style="text-align: center;"> 
+         <div class="ed-amin" style="text-align: center;"> 
             <a href="/article-edit/{{article._id}} {{image}}"><button type="button"
                     class="btn btn-dark">Editer</button></a>
             <a href="/article-delete/{{article._id}}"><button type="button"
