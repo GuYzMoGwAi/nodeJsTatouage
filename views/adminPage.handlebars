@@ -9,6 +9,7 @@
           <th>Nom</th>
           <th>Email</th>
           <th>Id</th>
+          <th>Bannir</th>
 
         </tr>
       </thead>
@@ -19,11 +20,13 @@
       <tbody>
         {{#each usr }}
         <tr>
-          <td name="lsNumber">{{lsNumber}}</td>
-          <td name="pseudo">{{pseudo}}</td>
-          <td name="name">{{name}}</td>
-          <td name="email">{{email}}</td>
-          <td name="id">{{id}}</td>
+          <td style="font-size: 1.1rem;" name="lsNumber">{{lsNumber}}</td>
+          <td style="font-size: 1rem;" name="pseudo">{{pseudo}}</td>
+          <td style="font-size: 1rem;" name="name">{{name}}</td>
+          <td style="font-size: 1rem;" name="email">{{email}}</td>
+          <td style="font-size: 1rem;" name="id">{{id}}</td>
+          <td style="font-size: 1rem;" name="id"><a href="/delete-user/{{_id}}" onclick="return confirm('Voulez-vous vraiment supprimer cette utilisateur?');"><button type="button"
+            class="btn"><i class="fas fa-trash-alt"></i></button></a></td>
         </tr>
         {{/each}}
       </tbody>
@@ -31,17 +34,50 @@
   </div>
 </div>
 
+{{!-- <section>
+  <h1>Liste des commentaires</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>N°</th>
+          <th>Pseudo</th>
+          <th>Contenue</th>
+          <th>Supprimer</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        {{#each adCommentaire }}
+        <tr>
+          <td style="font-size: 1.1rem;" name="lsNumber">{{coNumber}}</td>
+          <td style="font-size: 1rem;" name="name">{{pseudo}}</td>
+          <td style="font-size: 1rem;" name="content">{{{content}}}</td>
+          <td style="font-size: 1rem;" name="id"><a href="/delete-commentaire/" onclick="return confirm('Voulez-vous vraiment supprimer cette utilisateur?');"><button type="button"
+            class="btn"><i class="fas fa-trash-alt"></i></button></a></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section> --}}
+
+
+
 <section>
   <h1>Liste des articles</h1>
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
       <thead>
         <tr>
-          <th>n°</th>
+          <th class="taille" style="width: 5rem;">N°</th>
           <th>Titre</th>
           <th>Contenue</th>
-          <th>Date de création</th>
-          <th><i class="fas fa-trash-alt"></i>&ensp;<i class="fas fa-edit"></i></th>
+          <th style="width: 10rem;" >Date de création</th>
+          <th>Supprimer/Editer</th>
 
         </tr>
       </thead>
@@ -52,15 +88,14 @@
       <tbody>
         {{#each adArticle }}
         <tr>
-          <td name="arNumber">{{arNumber}}</td>
-          <td name="title">{{title}}</td>
+          <td style="width: 5rem; font-size: 1.5rem;" name="arNumber">{{arNumber}}</td>
+          <td name="title"><a href="/articles/{{_id}}" style="font-size: 1.2rem;">{{title}}</a></td>
           <td name="content">{{{content}}}</td>
-          <td name="createDate">&emsp;&emsp;{{moment creatDate format="DD-MM-YY"}}</td>
-          <td name="delete-article"><a href="/article-delete/{{_id}}"><button type="button"
+          <td style="width: 10rem;" name="createDate">{{moment creatDate format="DD-MM-YY"}}</td>
+          <td name="delete-article"><a href="/article-delete/{{_id}}" onclick="return confirm('Voulez-vous vraiment supprimer cette article?');" ><button type="button"
             class="btn"><i class="fas fa-trash-alt"></i></button></a>
-                                    <a href="/article-edit/{{_id}}"><button type="button"
-            class="btn"><i class="fas fa-edit"></i></button></a></td>
-               
+                                    <a href="/article-edit/{{_id}}" ><button type="button"
+            class="btn"><i class="fas fa-edit"></i></button></a></td>      
         </tr>
         {{/each}}
       </tbody>

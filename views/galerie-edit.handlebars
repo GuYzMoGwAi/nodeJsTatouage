@@ -9,15 +9,14 @@
                         <input class="input" type="hidden" name="deleteGalerieId" value={{galerie.id}}>
                     </div>
                 </div>
-                <img class="card-img img-responsive" style="border-radius: 1rem; padding-bottom:1rem;" src="{{galerie.image}}" alt="Card image">
-
+                <img class="card-img img-responsive" style="padding-bottom:1rem;" src="{{galerie.image}}" alt="Card image">
                 <div class="field is-grouped" style="padding-bottom: 1rem;">
                     {{#if admin}}
                      <div class="control" style="padding-top: 1rem;"> 
                         <a href="/galerie-delete/{{galerie._id}}"><button type="button"
                                 class="btn">supprimer</button></a>
                         {{/if}}
-                        <a><input class="btn" type=button onclick=window.location.href='/#galerie'; value=Annuler />
+                        <a><input class="btn" type=button onclick=window.location.href='/#galerie'; value=Retour />
                 </div>
             </div>
         </form>

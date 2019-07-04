@@ -91,7 +91,8 @@ const userCreate = require("./controllers/userCreate")
 const userRegister = require("./controllers/userRegister")
 const userLogin = require ("./controllers/userLogin")
 const userLoginAuth = require("./controllers/userLoginAuth")
-const userLogout = require ('./controllers/userLogout')
+const userLogout = require ("./controllers/userLogout")
+const deleteUser = require ("./controllers/deleteUser")
 
 // BODYPARSER =============================================
 app.use(bodyParser.json());
@@ -108,7 +109,6 @@ app.get ("/adminPage", homeAdmin )
 app.get ("/commentaire/add", auth, commentaireAddcontroller)
 app.post ("/commentaires/post", auth ,commentairePostcontroller)
 app.get ("/commentaire-edit/:id", commentaireEditcontroller)
-
 
 
 // ARTICLES =============================================
@@ -178,17 +178,19 @@ app.post('/galerie/edit/:id', function(req,res){
 });
 
 //EDIT COMMENTAIRE ==========================================
-app.post('/commentaire/edit/:id', (req,res) => {
+app.post('/commentaire-edit/:id', (req,res) => {
     const Commentaire = require('./database/models/Commentaire');
 
-           Commentaire.findOneAndUpdate( (error, post) => {
+    let query = {_id:req.params.id}
+
+           Commentaire.findOneAndUpdate(query,{...req.body}, (error, post) => {
                    if(error){
                             console.log(error);
                            return;
                    }else{
-                           res.redirect('/#commentaire');
+                           res.redirect('/#liste');
                    }
-                    });
+                });
             });
 
 // DELETE COMMENTAIRE ====================================
@@ -199,7 +201,9 @@ app.get ('/commentaire-delete/:id', function (req, res) {
 });
 
 
-// USERS ================================================
+
+//UTILISATEUR ===========================================
+app.get("/delete-user/:id", deleteUser)
 app.get("/user/create", redirectAuthSuccess, userCreate)
 app.post("/user/register", redirectAuthSuccess, userRegister)
 app.get ("/user/login", redirectAuthSuccess, userLogin)

@@ -25,22 +25,22 @@
         <div class="modal-body">
           <div class="md-form pb-5">
             <label data-error="wrong" data-success="right" for="Form-pass5" style="color: black">Pseudo</label>
-            <input type="text" id="Form-pass5" maxlength="30" class="form-control validate white-text" name="pseudo" placeholder="" value={{data.pseudo}}>
+            <input type="text" id="Form-pass5" maxlength="30" class="form-control validate white-text" name="pseudo" required placeholder="" value={{data.pseudo}}>
           </div>
           <!--Body-->
           <div class="md-form mb-3">
             <label data-error="wrong" data-success="right" for="Form-email5" style="color: black">Nom</label>
-            <input type="text" id="Form-text" maxlength="30" class="form-control validate white-text" name="name" placeholder="" value={{data.name}}>
+            <input type="text" id="Form-text" maxlength="30" class="form-control validate white-text" name="name" required placeholder="" value={{data.name}}>
           </div>
 
           <div class="md-form mb-3">
             <label data-error="wrong" data-success="right" for="Form-email5" style="color: black">Email</label>
-            <input type="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="Form-email5" class="form-control validate white-text" name="email" placeholder="" value={{data.email}} required="required">
+            <input type="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="Form-email5" class="form-control validate white-text" name="email" required placeholder="" value={{data.email}}>
           </div>
 
           <div class="md-form pb-3">
             <label data-error="wrong" data-success="right" for="Form-pass5" style="color: black">Mot de passe</label>
-            <input type="password" minlength="6" maxlength="30" id="Form-pass5" class="form-control validate white-text" name="password" placeholder="" value={{data.password}}>
+            <input type="password" minlength="6" maxlength="30" id="Form-pass5" class="form-control validate white-text" name="password" required placeholder="" value={{data.password}}>
           </div>
 
           <!--Grid row-->

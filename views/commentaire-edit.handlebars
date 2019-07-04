@@ -2,7 +2,7 @@
 <section>
 <div class="container" style="justify-content: center;">
     <p class="lead font-weight-bold" style="text-align: center; padding-top: 1rem; font-size: 2rem;" name="title">Modification du commentaire</p>
-    <form class="form-field" action="/commentaires/edit{{commentaire.id}}" method="POST" enctype="multipart/form-data"
+    <form class="form-field" action="/commentaire-edit/{{commentaire.id}}" method="POST" enctype="multipart/form-data"
       style="margin: 0 auto;">
       <div class="form-group" style="padding-top: 10px">
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content">{{commentaire.content}}</textarea>
@@ -17,7 +17,7 @@
         </div>
       </div>
       <button class="btn" type="submit" style="background-color: #343a40;">Envoyer</button>
-      <input type="button" class="btn btn-dark" onclick=window.location.href="/commentaires/{{commentaire._id}}" ; value=Annuler />
+      <input type="button" class="btn btn-dark" onclick=window.location.href="/#liste" ; value=Annuler />
     </form>
     <br>
 </div>
