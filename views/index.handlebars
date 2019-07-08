@@ -6,22 +6,22 @@
 <section>
   <div class="container-fluid">
     <div class="row">
-    {{#each posts}}
-    <div class="card">
-      <img class="card-img-top" src="{{image}}" alt="Image">
-      <div class="card-body" >
-        <div class="content" id="dash"  {{!--contenteditable="true"--}}>
-          <a href="/articles/{{_id}}">
-            <h2 class="card-title">{{title}}</h2>
-          </a>
-          <p class="card-text">{{{content}}}</p>
-          <div class="date">
-            <p>Publié par {{auteur}}, le {{moment creatDate format="DD-MM-YY"}}</p>
+      {{#each posts}}
+      <div class="card">
+        <img class="card-img-top" src="{{image}}" alt="Image">
+        <div class="card-body">
+          <div class="content" id="dash" {{!--contenteditable="true"--}}>
+            <a href="/articles/{{_id}}">
+              <h2 class="card-title">{{title}}</h2>
+            </a>
+            <p class="card-text">{{{content}}}</p>
+            <div class="date">
+              <p>Publié par {{auteur}}, le {{moment creatDate format="DD-MM-YY"}}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    {{/each}}
+      {{/each}}
     </div>
   </div>
 </section>
@@ -32,32 +32,32 @@
  ===========================================-->
 <div class="flex-container">
   <h1 class="h1photos">Galerie Photo</h1>
-<div id="galerie">
-  
-  {{#each imgGal}}
-  <img src="{{image}}" alt="ton image" style="cursor:pointer;"
-    onclick="javascript:window.location.replace('/galerie-edit/{{_id}}')" />
-  {{/each}}
+  <div id="galerie">
 
-  {{#if admin}}
-  <div class="container photo-add">
-    <form class="form-field add-photo" action="/galeries/post {{galerie.id}}" method="POST"
-      enctype="multipart/form-data">
-      <div class="file">
-        <label class="btn-link">
-          <i class="fas fa-cloud-upload-alt"></i><input type="file" style="display: none"
-            name="image" required>
-        </label>
-        <div class="field is-grouped">
-          <div class="control">
-            <button type="submit" class="button btn btn-dark">Envoyer</button>
+    {{#each imgGal}}
+    <img src="{{image}}" alt="ton image" style="cursor:pointer;"
+      onclick="javascript:window.location.replace('/galerie-edit/{{_id}}')" />
+    {{/each}}
+
+    {{#if admin}}
+    <div class="container photo-add">
+      <form class="form-field add-photo" action="/galeries/post {{galerie.id}}" method="POST"
+        enctype="multipart/form-data">
+        <div class="file">
+          <label class="btn-link">
+            <i class="fas fa-cloud-upload-alt"></i><input type="file" style="display: none" name="image" required>
+          </label>
+          
+          <div class="field is-grouped">
+            <div class="control">
+              <button type="submit" class="button btn btn-dark">Envoyer</button>
+            </div>
           </div>
         </div>
-      </div>
+    </div>
+    </form>
+    {{/if}}
   </div>
-  </form>
-  {{/if}}
-</div>
 </div>
 
 <!-- ==============================================
@@ -66,20 +66,19 @@
 
 {{#if user}}
 <section id="commentaire">
-  <form class="form-field" action="/commentaires/post/{{commentaire.id}}" method="POST"  enctype="multipart/form-data"
+  <form class="form-field" action="/commentaires/post/{{commentaire.id}}" method="POST" enctype="multipart/form-data"
     style="margin: 0 auto;">
     <div class="form-field evenement">
-    <p class="lead font-weight-bold" style="text-align: center; padding-top: 1rem; color: white;">Si vous voulez me laisser un message</p>
-    <div class="form-group" style="padding-top: 10px">
-      <label for="textarea"></label>
-      <textarea class="form-control" name="content"></textarea>
-      <script>
-        CKEDITOR.replace('content');
-      </script>
-    </div>
-   
-    <a href="#commentaire"><button class="btn" type="submit">Envoyer</button></a>
-    {{!-- <a href="/#test/{{_id}}"><button type="button" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button></a> --}}
+      <p class="lead font-weight-bold" style="text-align: center; padding-top: 1rem; color: white;" name="title">Si vous
+        voulez me laisser un message</p>
+      <div class="form-group" style="padding-top: 10px">
+        <label for="textarea"></label>
+        <textarea class="form-control" name="content"></textarea>
+        <script>
+          CKEDITOR.replace('content');
+        </script>
+      </div>
+      <button class="btn" type="submit">Envoyer</button>
   </form>
   <br>
 
@@ -87,39 +86,32 @@
 {{/if}}
 <section class="commentaire" id="liste">
   <h1 class="h1-commentaire">Liste des commentaires</h1>
-    {{#each commentaire}}
-    <div class="container">
-    <div class="row " style="justify-content: center;">
-        <div class="comment-wrapper">
-          <div class="panel panel-info">
-            <div class="panel-body">
-    
-                <hr>
-                <ul class="media-list">
-                  <li class="media" style="width: 35rem;">
-                    <div class="media-body" style="text-align: center;">
-                      <strong class="text-light bg-dark" style="display: flex; width: 12rem;">@{{auteur}}, le 
-                        {{moment creatDate format="DD-MM-YY"}}</strong>
-                      <p>{{{content}}}</p>
-                    </div>
-    
-                  </li>
-              </div>
-              </ul>
-            
-          </div>
-        </div>
+  {{#each commentaire}}
+  <div class="container-fluid">
+    <div class="form" style="justify-content: center;">
+      <hr>
+      
+        <strong class="text-light bg-dark" style="display: flex; width: 12rem;">@{{auteur}}, le
+          {{moment creatDate format="DD-MM-YY"}}</strong>
+        <p>{{{content}}}</p>
       
     </div>
-     {{#if ../admin}}
-                    <div class="control" style="padding-top: 1rem;">
-                      <a href="/commentaire-delete/{{_id}}"><button type="button" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button></a>&emsp;
-                      <a href="/commentaire-edit/{{_id}}"><button type="button" class="btn btn-dark"><i class="fas fa-edit"></i></button></a>
-                    </div>
-                    {{/if}}
-    {{/each}}
-    
-<a href="#top"><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top" aria-describedby="tooltip389606">Top</button></a>
+  </div>
+  </div>
+
+
+  {{#if ../admin}}
+  <div class="control">
+    <a href="/commentaire-delete/{{_id}}"><button type="button" class="btn btn-dark"><i
+          class="fas fa-trash-alt"></i></button></a>&emsp;
+    <a href="/commentaire-edit/{{_id}}"><button type="button" class="btn btn-dark"><i
+          class="fas fa-edit"></i></button></a>
+  </div>
+  {{/if}}
+  {{/each}}
+
+  <a href="#top"><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title=""
+      data-original-title="Tooltip on top" aria-describedby="tooltip389606">Top</button></a>
   </div>
 </section>
 

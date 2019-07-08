@@ -55,7 +55,11 @@
               <li class="nav-item">
                 <a class="nav-link" href="/user/logout">Déconnexion</a>
               </li>
-
+              {{#unless admin}}
+              <li class="nav-item">
+               <a class="nav-link" href="/delete-user/{{_id}}" onclick="return confirm('Voulez-vous vraiment supprimer votre compte ?');">Se désinscrire ?</a>
+              </li>
+              {{/unless}}
               {{else}}
               <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#darkModalForm" href="#">Connexion</a>

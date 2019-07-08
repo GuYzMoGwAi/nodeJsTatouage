@@ -24,13 +24,21 @@ h6{
   font-size: 2rem;
 }
 
+a {
+  color: #393939;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #000000;
+}
 
 path {
-  color: grey;
+  color: #000000;
 }
 
 path:hover {
-  color: rgb(2, 2, 2);
+  color: rgb(255, 255, 255);
 }
 
 /*=============================================
@@ -331,8 +339,8 @@ h1 {
 .form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .form-group {
@@ -503,7 +511,7 @@ footer {
 }
 
 .copyright {
-  padding: 5rem;
+  padding: 2rem;
 }
 
 .copyright a {
@@ -598,7 +606,7 @@ textarea.form-control {
   display: flex;
   justify-content: center;
   color: #343a40;
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 
 .btn-link:hover {
@@ -685,4 +693,25 @@ hr {
   border-top-style: none;
   border-top-width: 0px;
   border-top: 1rem solid rgba(0, 0, 0, .1);
+}
+
+.pl-5, .px-5 {
+
+  padding-left: 1rem !important;
+
+}
+.pb-5, .py-5 {
+
+  padding-bottom: 3rem !important;
+
+}
+.pr-5, .px-5 {
+
+  padding-right: 1rem !important;
+
+}
+.pt-5, .py-5 {
+
+  padding-top: 3rem !important;
+
 }

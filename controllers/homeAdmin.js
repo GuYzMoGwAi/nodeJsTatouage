@@ -1,6 +1,6 @@
 const Article = require('../database/models/Article');
 const User = require('../database/models/User');
-// const Commentaire = require('../database/models/Commentaire')
+const Commentaire = require('../database/models/Commentaire')
 
 
 module.exports = async (req, res) => {
@@ -35,6 +35,7 @@ module.exports = async (req, res) => {
                             Commentaire.find({}, (err, adCommentaire) => {
                                 for (i = 0; i < adCommentaire.length; i++) {
                                     adCommentaire[i] = {
+                                        _id: adCommentaire[i]._id,
                                         pseudo: usr[i].pseudo,
                                         content: adCommentaire[i].content,
                                         createDate: adCommentaire[i].createDate,

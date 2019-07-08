@@ -1,11 +1,21 @@
-
-.navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link {
-
+/* Param btn accueil dans admin*/
+.navbar-dark 
+.navbar-nav 
+.active > .nav-link, 
+.navbar-dark 
+.navbar-nav 
+.nav-link.active, 
+.navbar-dark .navbar-nav 
+.nav-link.show, 
+.navbar-dark 
+.navbar-nav 
+.show > .nav-link {
   color: #fff;
-  font-size: 2rem;
-  border: solid aliceblue;
-  border-radius: 5rem;
   margin: 5rem;
+}
+
+.nav-link {
+  margin-bottom: 4rem;
 }
 
 
@@ -62,7 +72,8 @@ h1 {
   
   body{
     font-family: 'Roboto', sans-serif;
-    background-image:  url(./images/black-1072366_1920.jpg) ;
+    /* background-image:  url(./images/black-1072366_1920.jpg) ; */
+    background-color: #000000;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -166,7 +177,6 @@ a {
 }
 
 
-
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -179,4 +189,7 @@ a {
   user-select: none;
   padding: .375rem .75rem;
   font-size: 1.1rem;
+}
+.btn.btn-dark {
+  border-radius: 10rem;
 }

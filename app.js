@@ -73,11 +73,13 @@ const articleAddcontroller = require("./controllers/articleAdd")
 const articleSinglecontroller = require("./controllers/articleSingle")
 const articlePostcontroller = require("./controllers/articlePost")
 const articleEdit = require ("./controllers/articleEdit")
+const articleDelete = require ("./controllers/articleDelete")
 
 // COMMENTAIRE ============================================
 const commentaireAddcontroller = require ("./controllers/commentaireAdd")
 const commentairePostcontroller = require ("./controllers/commentairePost")
 const commentaireEditcontroller = require ("./controllers/commentaireEdit")
+const commentaireDeletecontroller = require ("./controllers/commentaireDelete")
 
 
 // Galerie ================================================
@@ -85,6 +87,7 @@ const galerieAddcontroller = require ("./controllers/galerieAdd")
 const galerieSinglecontroller = require ("./controllers/galerieSingle")
 const galeriePostcontroller = require ("./controllers/galeriePost")
 const galerieEdit = require ("./controllers/galerieEdit")
+const galerieDelete = require ("./controllers/galerieDelete")
 
 // USER ==================================================
 const userCreate = require("./controllers/userCreate")
@@ -93,6 +96,7 @@ const userLogin = require ("./controllers/userLogin")
 const userLoginAuth = require("./controllers/userLoginAuth")
 const userLogout = require ("./controllers/userLogout")
 const deleteUser = require ("./controllers/deleteUser")
+
 
 // BODYPARSER =============================================
 app.use(bodyParser.json());
@@ -109,6 +113,8 @@ app.get ("/adminPage", homeAdmin )
 app.get ("/commentaire/add", auth, commentaireAddcontroller)
 app.post ("/commentaires/post", auth ,commentairePostcontroller)
 app.get ("/commentaire-edit/:id", commentaireEditcontroller)
+// DELETE COMMENTAIRE ====================================
+app.get ('/commentaire-delete/:id', commentaireDeletecontroller) 
 
 
 // ARTICLES =============================================
@@ -116,12 +122,24 @@ app.get("/articles/add", auth, articleAddcontroller)
 app.get("/articles/:id", articleSinglecontroller)
 app.post("/articles/post", auth, articleValidPost, articlePostcontroller)
 app.get("/article-edit/:id", articleEdit)
+//DELETE ARTICLES ========================================
+app.get('/article-delete/:id', articleDelete)
 
 // GALERIES =============================================
 app.get("/galerie/add", auth, galerieAddcontroller)
 app.get("/galeries/:id", galerieSinglecontroller)
 app.post("/galeries/post", auth ,articleValidPost ,galeriePostcontroller)
 app.get("/galerie-edit/:id", galerieEdit)
+//DELETE GALERIE =========================================
+app.get('/galerie-delete/:id', galerieDelete)
+
+//UTILISATEUR ===========================================
+app.get("/delete-user/:id", deleteUser)
+app.get("/user/create", redirectAuthSuccess, userCreate)
+app.post("/user/register", redirectAuthSuccess, userRegister)
+app.get ("/user/login", redirectAuthSuccess, userLogin)
+app.post("/user/loginAuth", redirectAuthSuccess, userLoginAuth)
+app.get ("/user/logout", userLogout)
 
 //EDIT ARTICLES =========================================
 app.post('/article/edit/:id', function(req,res){
@@ -143,14 +161,6 @@ app.post('/article/edit/:id', function(req,res){
             })
     });
     
-//DELETE ARTICLES ========================================
-    app.get('/article-delete/:id', function (req, res) {
-           const Article = require('./database/models/Article')
-           Article.findByIdAndRemove({_id: req.params.id}).then(function(article){})
-    res.redirect('/');
-});
-
-// GALERIE ==============================================
 //EDIT GALERIE ==========================================
 app.post('/galerie/edit/:id', function(req,res){
     const Galerie = require('./database/models/Galerie');
@@ -169,13 +179,6 @@ app.post('/galerie/edit/:id', function(req,res){
                     });
             })
     });
-    
-//DELETE GALERIE =========================================
-    app.get('/galerie-delete/:id', function (req, res) {
-           const Galerie = require('./database/models/Galerie')
-           Galerie.findByIdAndRemove({_id: req.params.id}).then(function(galerie){})
-    res.redirect('/#galerie');
-});
 
 //EDIT COMMENTAIRE ==========================================
 app.post('/commentaire-edit/:id', (req,res) => {
@@ -192,23 +195,6 @@ app.post('/commentaire-edit/:id', (req,res) => {
                    }
                 });
             });
-
-// DELETE COMMENTAIRE ====================================
-app.get ('/commentaire-delete/:id', function (req, res) {
-        const Commentaire = require ('./database/models/Commentaire')
-        Commentaire.findByIdAndRemove({_id: req.params.id}).then(function(commentaire){})
-    res.redirect('/#liste');
-});
-
-
-
-//UTILISATEUR ===========================================
-app.get("/delete-user/:id", deleteUser)
-app.get("/user/create", redirectAuthSuccess, userCreate)
-app.post("/user/register", redirectAuthSuccess, userRegister)
-app.get ("/user/login", redirectAuthSuccess, userLogin)
-app.post("/user/loginAuth", redirectAuthSuccess, userLoginAuth)
-app.get ("/user/logout", userLogout)
 
 
 // CONTACT ==============================================

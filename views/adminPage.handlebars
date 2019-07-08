@@ -25,7 +25,7 @@
           <td style="font-size: 1rem;" name="name">{{name}}</td>
           <td style="font-size: 1rem;" name="email">{{email}}</td>
           <td style="font-size: 1rem;" name="id">{{id}}</td>
-          <td style="font-size: 1rem;" name="id"><a href="/delete-user/{{_id}}" onclick="return confirm('Voulez-vous vraiment supprimer cette utilisateur?');"><button type="button"
+          <td style="font-size: 1rem;" name="id"><a href="/delete-user/{{_id}}" onclick="return confirm('Voulez-vous vraiment supprimer cette utilisateur ?');"><button type="button"
             class="btn"><i class="fas fa-trash-alt"></i></button></a></td>
         </tr>
         {{/each}}
@@ -34,7 +34,7 @@
   </div>
 </div>
 
-{{!-- <section>
+ <section>
   <h1>Liste des commentaires</h1>
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
@@ -43,7 +43,7 @@
           <th>N°</th>
           <th>Pseudo</th>
           <th>Contenue</th>
-          <th>Supprimer</th>
+          <th>Supprimer/Editer</th>
         </tr>
       </thead>
     </table>
@@ -56,14 +56,23 @@
           <td style="font-size: 1.1rem;" name="lsNumber">{{coNumber}}</td>
           <td style="font-size: 1rem;" name="name">{{pseudo}}</td>
           <td style="font-size: 1rem;" name="content">{{{content}}}</td>
-          <td style="font-size: 1rem;" name="id"><a href="/delete-commentaire/" onclick="return confirm('Voulez-vous vraiment supprimer cette utilisateur?');"><button type="button"
-            class="btn"><i class="fas fa-trash-alt"></i></button></a></td>
+          <td style="font-size: 1rem;" name="id"><a href="/commentaire-delete/{{_id}}" onclick="return confirm('Voulez-vous vraiment supprimer ce commentaire ?');"><button type="button"
+            class="btn"><i class="fas fa-trash-alt"></i></button></a>
+                                                  <a href="/commentaire-edit/{{_id}}"><button type="button"
+            class="btn"><i class="fas fa-edit"></i></button></a></td></td>
         </tr>
         {{/each}}
       </tbody>
     </table>
   </div>
-</section> --}}
+  </div>
+    <div class="form-field evenement">
+      <div class="control">
+        <input class="input" type="hidden" name="commentaireId" value={{commentaire.id}}>
+        <input class="input" type="hidden" name="commentaireId" value={{commentaire.id}}>
+      </div>
+    </div>
+</section>
 
 
 
@@ -92,7 +101,7 @@
           <td name="title"><a href="/articles/{{_id}}" style="font-size: 1.2rem;">{{title}}</a></td>
           <td name="content">{{{content}}}</td>
           <td style="width: 10rem;" name="createDate">{{moment creatDate format="DD-MM-YY"}}</td>
-          <td name="delete-article"><a href="/article-delete/{{_id}}" onclick="return confirm('Voulez-vous vraiment supprimer cette article?');" ><button type="button"
+          <td name="delete-article"><a href="/article-delete/{{_id}}" onclick="return confirm('Voulez-vous vraiment supprimer cette article ?');" ><button type="button"
             class="btn"><i class="fas fa-trash-alt"></i></button></a>
                                     <a href="/article-edit/{{_id}}" ><button type="button"
             class="btn"><i class="fas fa-edit"></i></button></a></td>      
