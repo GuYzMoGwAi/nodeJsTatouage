@@ -57,7 +57,8 @@
               </li>
               {{#unless admin}}
               <li class="nav-item">
-               <a class="nav-link" href="/delete-user/{{_id}}" onclick="return confirm('Voulez-vous vraiment supprimer votre compte ?');">Se désinscrire ?</a>
+               <a class="nav-link" href="/delete-user/{{sess.userId}}">Se désinscrire ?</a>
+                {{!-- onclick="return confirm('Voulez-vous vraiment supprimer votre compte ?');" --}}
               </li>
               {{/unless}}
               {{else}}

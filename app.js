@@ -105,8 +105,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 // ROUTES ===============================================
-app.get("/", homepage);
-app.get ("/adminPage", homeAdmin )
+app.get("/", homepage, deleteUser);
+app.use ("/adminPage", homeAdmin )
 
 
 // COMMENTAIRES =========================================
@@ -134,7 +134,7 @@ app.get("/galerie-edit/:id", galerieEdit)
 app.get('/galerie-delete/:id', galerieDelete)
 
 //UTILISATEUR ===========================================
-app.get("/delete-user/:id", deleteUser)
+app.use("/delete-user", deleteUser)
 app.get("/user/create", redirectAuthSuccess, userCreate)
 app.post("/user/register", redirectAuthSuccess, userRegister)
 app.get ("/user/login", redirectAuthSuccess, userLogin)
@@ -196,11 +196,30 @@ app.post('/commentaire-edit/:id', (req,res) => {
                 });
             });
 
+// Delete ==============================================
+// app.get("/delete-user/:id", (req, res) => {
+//     const
+//     // User.findByIdAndRemove({_id: req.params.id}).then(function (usr){})
+//     User.findByIdAndRemove(
+//         req.params.id,
+//         { useFindAndModify: false },
+//         function (err) {
+//             if (!err) {
+//                 req.session.destroy(() => {
+//                     res.clearCookie("biscuit");
+//                     console.log('del ok');
+//                     res.redirect('/')
+//             })
+//             } else {
+//                 res.redirect('/');
+//             }
+//         });
+//         res.redirect ("/contact")
+// })
 
 // CONTACT ==============================================
-app.get("/contact", function (req, res) {
-    res.render("contact",)
-})
+const contactPage = require("./controllers/contactPage");
+app.use("/contact", contactPage, deleteUser )
 
 // ERROR ================================================
 app.use ((req, res) => {
