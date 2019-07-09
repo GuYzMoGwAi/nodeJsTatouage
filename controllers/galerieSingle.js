@@ -1,7 +1,7 @@
-const Post =require("../database/models/Galerie")
+const Post = require("../database/models/Galerie")
 
 module.exports = async (req, res) =>{
-    const galerie = await Post.findById(req.params.id)
-   // console.log(req.params);
-    res.render("galeries",{galerie}) 
+    const galerie = await Post.findById(req.params.id),
+    sess = req.session;
+    res.render("galeries",{galerie, sess}) 
 } 

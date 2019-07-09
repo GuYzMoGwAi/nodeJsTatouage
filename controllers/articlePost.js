@@ -13,7 +13,7 @@ module.exports = (req, res) => {
               {
                   ...req.body,
                   image: `/articles/${image.name}`,
-                  auteur: user.pseudo
+                  auteur: user.pseudo,
               }
               , (error, post) => {
               res.redirect("/")

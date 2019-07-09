@@ -3,12 +3,14 @@ const app = express();
 const User = require("../database/models/User")
 const bycrypt = require("bcrypt")
 
+
 app.get("/create", (req, res) => {
     res.render("register", {
         errors: req.flash("registerError"),
         data: req.flash("data")[0]
     })
 })
+
 
 app.post("/register", (req, res) => {
     User.create(
@@ -24,9 +26,11 @@ app.post("/register", (req, res) => {
     )
 })
 
+
 app.get ("/login", (req, res) => {
     res.render ("login")
 })
+
 
 app.post("/loginAuth", (req, res) => {
     const {

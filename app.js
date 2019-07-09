@@ -74,6 +74,7 @@ const articleSinglecontroller = require("./controllers/articleSingle")
 const articlePostcontroller = require("./controllers/articlePost")
 const articleEdit = require ("./controllers/articleEdit")
 const articleDelete = require ("./controllers/articleDelete")
+const articleEditPost = require ("./controllers/articleEditPost")
 
 // COMMENTAIRE ============================================
 const commentaireAddcontroller = require ("./controllers/commentaireAdd")
@@ -86,14 +87,16 @@ const commentaireDeletecontroller = require ("./controllers/commentaireDelete")
 const galerieAddcontroller = require ("./controllers/galerieAdd")
 const galerieSinglecontroller = require ("./controllers/galerieSingle")
 const galeriePostcontroller = require ("./controllers/galeriePost")
-const galerieEdit = require ("./controllers/galerieEdit")
+// const galerieEdit = require ("./controllers/galerieEdit")
 const galerieDelete = require ("./controllers/galerieDelete")
+const galerieEditPost = require ("./controllers/galerieEditPost")
 
 // USER ==================================================
 // const userCreate = require("./controllers/userCreate")
 // const userRegister = require("./controllers/userRegister")
 // const userLogin = require ("./controllers/userLogin")
 // const userLoginAuth = require("./controllers/userLoginAuth")
+const userCont = require('./controllers/userCont')
 const userLogout = require ("./controllers/userLogout")
 const deleteUser = require ("./controllers/deleteUser")
 
@@ -122,6 +125,7 @@ app.get("/articles/add", auth, articleAddcontroller)
 app.get("/articles/:id", articleSinglecontroller)
 app.post("/articles/post", auth, articleValidPost, articlePostcontroller)
 app.get("/article-edit/:id", articleEdit)
+app.post("/article-edit/:id", articleEditPost)
 //DELETE ARTICLES ========================================
 app.get('/article-delete/:id', articleDelete)
 
@@ -129,54 +133,17 @@ app.get('/article-delete/:id', articleDelete)
 app.get("/galerie/add", auth, galerieAddcontroller)
 app.get("/galeries/:id", galerieSinglecontroller)
 app.post("/galeries/post", auth ,articleValidPost ,galeriePostcontroller)
-app.get("/galerie-edit/:id", galerieEdit)
+// app.get("/galerie-edit/:id", galerieEdit)
+app.post("/galerie-edit/:id", galerieEditPost)
 //DELETE GALERIE =========================================
 app.get('/galerie-delete/:id', galerieDelete)
 
 //UTILISATEUR ===========================================
-const userCont = require('./controllers/userCont')
 app.use("/delete-user", deleteUser)
 app.use("/user", redirectAuthSuccess, userCont)
 app.get("/logout", userLogout)
 
-//EDIT ARTICLES =========================================
-app.post('/article/edit/:id', function(req,res){
-    const Article = require('./database/models/Article');
-    const path = require('path')
 
-    let query = {_id:req.body.articleId}
-    const {image} = req.files
-       const uploadFile = path.resolve(__dirname, 'public/articles',image.name);
-       image.mv(uploadFile, (error)=>{
-           Article.findOneAndUpdate(query, {...req.body, image: `/articles/${image.name}`}, function(error, post){
-                   if(error){
-                            console.log(error);
-                           return;
-                   }else{
-                           res.redirect('/');
-                   }
-                    });
-            })
-    });
-    
-//EDIT GALERIE ==========================================
-app.post('/galerie/edit/:id', function(req,res){
-    const Galerie = require('./database/models/Galerie');
-    const path = require('path')
-
-    const {image} = req.files
-       const uploadFile = path.resolve(__dirname, 'public/images',image.name);
-       image.mv(uploadFile, (error)=>{
-           Galerie.findOneAndUpdate({ image: `/galeries/${image.name}`}, function(error, post){
-                   if(error){
-                            console.log(error);
-                           return;
-                   }else{
-                           res.redirect('/');
-                   }
-                    });
-            })
-    });
 
 //EDIT COMMENTAIRE ==========================================
 app.post('/commentaire-edit/:id', (req,res) => {
@@ -204,6 +171,10 @@ app.use ((req, res) => {
     res.render('error404')
 })
 
+// PRESENTATION ========================================
+app.get ((req, res) => {
+    res.render('presentation')
+})
 
 app.listen(3050, function(){
     // console.log("le serveur tourne sur le port 3000");

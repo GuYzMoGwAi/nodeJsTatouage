@@ -6,10 +6,10 @@
     </div>
     {{#if admin}}
     <div class="control">
-        <a href="/galerie-edit/{{galerie._id}} {{image}}"><button type="button" class="btn">Editer</button></a>
-        <a href="/galerie-delete/{{galerie._id}}"><button type="button" class="btn">supprimer</button></a>
-        {{!-- <input type=button onclick=window.location.href='localhost:3050' value=Annuler /> --}}
-        {{!-- <button class="button is-text">Annuler</button> --}}
+        {{!-- <a href="/galerie-edit/{{galerie._id}} {{image}}"><button type="button" class="btn">Editer</button></a> --}}
+        <a href="/galerie-delete/{{galerie._id}}"><button type="button" name="subject" class="btn">supprimer</button></a>&emsp;
+        <a href="/#galerie"><button type="button"  name="subject" class="btn">Retour</button></a>
+       
         {{/if}}
 
     </div>

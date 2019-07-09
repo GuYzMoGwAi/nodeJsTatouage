@@ -17,6 +17,10 @@
 .nav-link {
   margin-bottom: 4rem;
 }
+/* Container utilisateurs */
+.container {
+  max-width: 80rem;
+}
 
 
 h1 {
