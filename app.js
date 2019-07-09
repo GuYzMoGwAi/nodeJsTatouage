@@ -90,10 +90,10 @@ const galerieEdit = require ("./controllers/galerieEdit")
 const galerieDelete = require ("./controllers/galerieDelete")
 
 // USER ==================================================
-const userCreate = require("./controllers/userCreate")
-const userRegister = require("./controllers/userRegister")
-const userLogin = require ("./controllers/userLogin")
-const userLoginAuth = require("./controllers/userLoginAuth")
+// const userCreate = require("./controllers/userCreate")
+// const userRegister = require("./controllers/userRegister")
+// const userLogin = require ("./controllers/userLogin")
+// const userLoginAuth = require("./controllers/userLoginAuth")
 const userLogout = require ("./controllers/userLogout")
 const deleteUser = require ("./controllers/deleteUser")
 
@@ -134,12 +134,10 @@ app.get("/galerie-edit/:id", galerieEdit)
 app.get('/galerie-delete/:id', galerieDelete)
 
 //UTILISATEUR ===========================================
+const userCont = require('./controllers/userCont')
 app.use("/delete-user", deleteUser)
-app.get("/user/create", redirectAuthSuccess, userCreate)
-app.post("/user/register", redirectAuthSuccess, userRegister)
-app.get ("/user/login", redirectAuthSuccess, userLogin)
-app.post("/user/loginAuth", redirectAuthSuccess, userLoginAuth)
-app.get ("/user/logout", userLogout)
+app.use("/user", redirectAuthSuccess, userCont)
+app.get("/logout", userLogout)
 
 //EDIT ARTICLES =========================================
 app.post('/article/edit/:id', function(req,res){
@@ -196,26 +194,6 @@ app.post('/commentaire-edit/:id', (req,res) => {
                 });
             });
 
-// Delete ==============================================
-// app.get("/delete-user/:id", (req, res) => {
-//     const
-//     // User.findByIdAndRemove({_id: req.params.id}).then(function (usr){})
-//     User.findByIdAndRemove(
-//         req.params.id,
-//         { useFindAndModify: false },
-//         function (err) {
-//             if (!err) {
-//                 req.session.destroy(() => {
-//                     res.clearCookie("biscuit");
-//                     console.log('del ok');
-//                     res.redirect('/')
-//             })
-//             } else {
-//                 res.redirect('/');
-//             }
-//         });
-//         res.redirect ("/contact")
-// })
 
 // CONTACT ==============================================
 const contactPage = require("./controllers/contactPage");
