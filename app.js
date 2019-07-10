@@ -68,6 +68,9 @@ app.use("*", (req, res, next) => {
 // *Controller
 const homepage = require("./controllers/homepage")
 const homeAdmin = require ("./controllers/homeAdmin")
+const contactPage = require("./controllers/contactPage");
+const horaire = require ("./controllers/horaire")
+
 // ARTICLE ===============================================
 const articleAddcontroller = require("./controllers/articleAdd")
 const articleSinglecontroller = require("./controllers/articleSingle")
@@ -96,7 +99,7 @@ const galerieEditPost = require ("./controllers/galerieEditPost")
 // const userRegister = require("./controllers/userRegister")
 // const userLogin = require ("./controllers/userLogin")
 // const userLoginAuth = require("./controllers/userLoginAuth")
-const userCont = require('./controllers/userCont')
+const userCont = require ('./controllers/userCont')
 const userLogout = require ("./controllers/userLogout")
 const deleteUser = require ("./controllers/deleteUser")
 
@@ -108,8 +111,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 // ROUTES ===============================================
-app.get("/", homepage, deleteUser);
+app.get ("/", homepage, deleteUser);
 app.use ("/adminPage", homeAdmin )
+app.get ("/horaire", horaire)
 
 
 // COMMENTAIRES =========================================
@@ -163,17 +167,15 @@ app.post('/commentaire-edit/:id', (req,res) => {
 
 
 // CONTACT ==============================================
-const contactPage = require("./controllers/contactPage");
 app.use("/contact", contactPage, deleteUser )
 
 // ERROR ================================================
 app.use ((req, res) => {
     res.render('error404')
 })
-
-// PRESENTATION ========================================
-app.get ((req, res) => {
-    res.render('presentation')
+ // HORAIRE =============================================
+app.use ((req, res) => {
+    res.render('horaire')
 })
 
 app.listen(3050, function(){

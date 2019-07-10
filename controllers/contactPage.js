@@ -4,7 +4,7 @@ const User = require("../database/models/User")
 
 app.get("/", (req, res) => {
     const sess = req.session;
-    console.log(sess);
+    // console.log(sess);
     res.render("contact", {sess} )
 })
 
