@@ -13,14 +13,12 @@ const {stripTags} = require ('./helpers/hbs');
 const app = express();
 
 //MongoDB ===============================================
-// const db = require('./config/keys').MongoURI
-// mongoose
-//     .connect(db, {useNewUrlParser: true , useCreateIndex: true})
-//     .then(()=> console.log('Connecter à MongoDB Cloud'))
-//     .catch(err => console.log(err));
-// MONGOOSE CONNECT =====================================
+const db = require('./config/keys').MongoURI
+mongoose
+    .connect(db, {useNewUrlParser: true , useCreateIndex: true})
+    .then(()=> console.log('Connecter à MongoDB Cloud'))
+    .catch(err => console.log(err));
 const mongoStore = MongoStore(expressSession)
-mongoose.connect('mongodb://localhost:27017/blog', {useNewUrlParser: true , useCreateIndex: true})
 
 // mongodb+srv://blog:QV1cpLkwrEkO9eZH@blog-afur9.mongodb.net/test?retryWrites=true
 app.use(connectFlash())

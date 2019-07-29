@@ -12,7 +12,7 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <ul class="nav navbar-nav ml-auto">
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown" style="z-index: auto;">
 
                 {{#unless admin}}
                 {{!-- <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Portfolio</a>
@@ -56,7 +56,7 @@
               </li>
               {{#unless admin}}
               <li class="nav-item">
-               <a class="nav-link" href="/delete-user/{{sess.userId}}">Se désinscrire ?</a>
+               <a class="nav-link" href="/delete-user/{{sess.userId}}" onclick="return confirm('Voulez-vous vraiment supprimer votre compte ?');">Se désinscrire ?</a>
                 {{!-- onclick="return confirm('Voulez-vous vraiment supprimer votre compte ?');" --}}
               </li>
               {{/unless}}
