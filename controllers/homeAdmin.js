@@ -34,7 +34,7 @@ app.get('/', async (req, res) => {
                 for (i = 0; i < adCommentaire.length; i++) {
                 adCommentaire[i] = {
                     _id: adCommentaire[i]._id,
-                    pseudo: usr[i].pseudo,
+                    auteur: adCommentaire[i].auteur,
                     content: adCommentaire[i].content,
                     createDate: adCommentaire[i].createDate,
                     coNumber: `${i+1}`

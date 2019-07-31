@@ -31,6 +31,28 @@ app.use(expressSession({
         mongooseConnection: mongoose.connection
     })
 }))
+
+// HANDLEBARS =========================================
+var Handlebars = require("handlebars");
+var MomentHandler = require("handlebars.moment");
+MomentHandler.registerHelpers(Handlebars);
+
+app.use(express.static('public'));
+
+app.engine('.handlebars', exphbs({
+    helpers: {
+        stripTags : stripTags
+    },
+    extname: '.handlebars',
+    defaultLayout: 'main'
+}));
+app.set('view engine', 'handlebars');
+app.use("*", (req, res, next) => {
+    res.locals.user = req.session.userId;
+    // console.log(res.locals.user);
+    next()
+})
+
 app.use(fileupload());
 
 // MIDDLEWARE AUTH ======================================
@@ -42,26 +64,6 @@ const articleValidPost = require("./middleware/articleValidPost")
 app.use("/articles/post", articleValidPost);
 app.use("./articles/add", auth);
 app.use(isAdmin);
-
-// HANDLEBARS =========================================
-var Handlebars = require("handlebars");
-var MomentHandler = require("handlebars.moment");
-MomentHandler.registerHelpers(Handlebars);
-
-app.use(express.static('public'));
-
-app.engine('handlebars', exphbs({
-    helpers: {
-        stripTags : stripTags
-    },
-    defaultLayout: 'main'
-}));
-app.set('view engine', 'handlebars');
-app.use("*", (req, res, next) => {
-    res.locals.user = req.session.userId;
-    // console.log(res.locals.user);
-    next()
-})
 
 // *Controller
 const homepage = require("./controllers/homepage")
@@ -110,7 +112,7 @@ app.use(bodyParser.urlencoded({
 
 // ROUTES ===============================================
 app.get ("/", homepage, deleteUser);
-app.get ("/adminPage", homeAdmin )
+app.use ("/adminPage", homeAdmin )
 app.get ("/horaire", horaire)
 
 
