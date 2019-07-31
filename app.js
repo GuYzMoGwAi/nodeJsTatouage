@@ -110,7 +110,7 @@ app.use(bodyParser.urlencoded({
 
 // ROUTES ===============================================
 app.get ("/", homepage, deleteUser);
-app.use ("/adminPage", homeAdmin )
+app.get ("/adminPage", homeAdmin )
 app.get ("/horaire", horaire)
 
 
