@@ -113,6 +113,7 @@ header {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* */
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
   color: rgba(0,0,0,.7);
   color: #FFFFFF;
@@ -130,12 +131,6 @@ header {
                       BODY/EVENEMENT
 ==================================================*/
 
-/* Parallax
-.parallax-window {
-  min-height: 400px;
-  background: transparent;
-} */
-
 /* Partie section */
 section {
   background-image: url(./images/paysage.jpg);
@@ -147,7 +142,7 @@ section {
 
 /* Architecture container evenement */
 .container-fluid {
-  padding-top: 1rem; 
+  /* padding-top: 1rem;  */
 }
 
 @media (min-width: 768px) {
