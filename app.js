@@ -1,6 +1,3 @@
-// TEST SECU ?
-
-
 // LES MODULES ====================================
 const express = require("express");
 const exphbs = require('express-handlebars');

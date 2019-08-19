@@ -137,7 +137,7 @@ section {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
 }
 
 /* Architecture container evenement */
@@ -700,6 +700,7 @@ textarea.form-control {
 
 .row {
   margin: 0 auto;
+  padding-top: 1rem;
 }
 
 /* Séparation des commentaires*/
