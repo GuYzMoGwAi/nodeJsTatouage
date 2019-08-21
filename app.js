@@ -15,7 +15,7 @@ const app = express();
 //MongoDB ===============================================
 const db = require('./config/keys').MongoURI
 mongoose
-    .connect(db, {useNewUrlParser: true , useCreateIndex: true})
+    .connect(db, {useNewUrlParser: true , useCreateIndex: true, useFindAndModify: false })
     .then(()=> console.log('Connecter à MongoDB Cloud'))
     .catch(err => console.log(err));
 const mongoStore = MongoStore(expressSession)
@@ -127,7 +127,7 @@ app.get ('/commentaire-delete/:id', commentaireDeletecontroller)
 // ARTICLES =============================================
 app.get("/articles/add", auth, articleAddcontroller)
 app.get("/articles/:id", articleSinglecontroller)
-app.post("/articles/post", auth, articleValidPost, articlePostcontroller)
+app.post("/articles/post", auth, articlePostcontroller)
 app.get("/article-edit/:id", articleEdit)
 app.post("/article-edit/:id", articleEditPost)
 //DELETE ARTICLES ========================================

@@ -8,7 +8,7 @@
     <div class="row">
       {{#each posts}}
       <div class="card">
-        <img class="card-img-top" src="{{image}}" alt="Image">
+        <img class="card-img-top" src="{{image}}" alt="Événement">
         <div class="card-body">
           <div class="content" id="dash" {{!--contenteditable="true"--}}>
             <a href="/articles/{{_id}}">
@@ -36,7 +36,7 @@
 
     {{#each imgGal}}
     
-    <img src="{{image}}" alt="ton image" style="cursor:pointer;" {{#if ../admin}} onclick="javascript:window.location.replace('/galeries/{{_id}}')"{{/if}} />
+    <img src="{{image}}" alt="Nolink" style="cursor:pointer;" {{#if ../admin}} onclick="javascript:window.location.replace('/galeries/{{_id}}')"{{/if}} />
       
     {{/each}}
 
