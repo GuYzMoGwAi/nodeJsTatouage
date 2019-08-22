@@ -20,16 +20,3 @@ module.exports = (req, res) => {
         })
     })
 }
-
-// const { img }    = req.files
-// , uploadFile = path.resolve(__dirname, '../..', 'public/images/artBlog', img.name);    img.mv(uploadFile, (error) => {
-// Article.create({
-//     ...req.body,
-//     img: /assets/images/artBlog/${img.name}
-// },
-//     (error, post) => {
-//         console.log('blabla');
-//         res.redirect('/blog')
-//     })
-// })
-// })

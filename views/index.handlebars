@@ -8,7 +8,7 @@
     <div class="row">
       {{#each posts}}
       <div class="card">
-        <img class="card-img-top" src="{{image}}" alt="Événement">
+        <img class="card-img-top" src="{{image}}" alt="Événement tatouage">
         <div class="card-body">
           <div class="content" id="dash" {{!--contenteditable="true"--}}>
             <a href="/articles/{{_id}}">
@@ -16,7 +16,7 @@
             </a>
             <p class="card-text">{{{content}}}</p>
             <div class="date">
-              <p>Publié par {{auteur}}, le {{moment creatDate format="DD-MM-YY"}}</p>
+              <p>Publié par {{auteur}}, le {{moment createDate format="DD-MM-YY"}}</p>
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@
     <div class="form" style="justify-content: center;">
       <hr>
         <strong class="text-light bg-dark" style="display: flex; width: 12rem;">@{{auteur}}, le
-          {{moment creatDate format="DD-MM-YY hh:mm A"}}</strong>
+          {{moment createDate format="DD-MM-YY HH:mm A"}}</strong>
         <p>{{{content}}}</p>
     </div>
   </div>

@@ -10,7 +10,7 @@ const CommentaireSchema = new mongoose.Schema ({
     auteur: {
             type: String
     },
-
+    date: String,
     createDate: {
                 type: Date,
                 default: new Date()
