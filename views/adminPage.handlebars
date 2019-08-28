@@ -160,7 +160,8 @@
           <td style="font-size: 1rem;" name="email">{{email}}</td>
           <td style="font-size: 1rem;" name="id">{{id}}</td>
           <td style="font-size: 1rem;" name="id"><a href="/adminPage/delete-profile/{{_id}}" onclick="return confirm('Voulez-vous vraiment supprimer cette utilisateur ?');"><button type="button"
-            class="btn"><i class="fas fa-trash-alt"></i></button></a></td>
+            class="btn"><i class="fas fa-trash-alt"></i></button></a>
+          </td>
         </tr>
         {{/each}}
       </tbody>
@@ -196,7 +197,8 @@
           <td style="font-size: 1rem;" name="id"><a href="/commentaire-delete/{{_id}}" onclick="return confirm('Voulez-vous vraiment supprimer ce commentaire ?');"><button type="button"
                                                     class="btn"><i class="fas fa-trash-alt"></i></button></a>
                                                   <a href="/commentaire-edit/{{_id}}"><button type="button"
-                                                    class="btn"><i class="fas fa-edit"></i></button></a></td></td>
+                                                    class="btn"><i class="fas fa-edit"></i></button></a>
+          </td>
         </tr>
         {{/each}}
       </tbody>
@@ -205,8 +207,8 @@
   </div>
     <div class="form-field evenement">
       <div class="control">
-        <input class="input" type="hidden" name="commentaireId" value={{commentaire.id}}>
-        <input class="input" type="hidden" name="commentaireId" value={{commentaire.id}}>
+        <input class="input" type="hidden" name="commentaireId" value="{{commentaire.id}}">
+        <input class="input" type="hidden" name="commentaireId" value="{{commentaire.id}}">
       </div>
     </div>
 </div>
@@ -246,8 +248,8 @@
   </div>
     <div class="form-field evenement">
       <div class="control">
-        <input class="input" type="hidden" name="galerieId" value={{galerie.id}}>
-        <input class="input" type="hidden" name="deleteGalerieId" value={{galerie.id}}>
+        <input class="input" type="hidden" name="galerieId" value="{{galerie.id}}">
+        <input class="input" type="hidden" name="deleteGalerieId" value="{{galerie.id}}">
       </div>
     </div>
 </div>

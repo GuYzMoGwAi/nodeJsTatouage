@@ -4,7 +4,7 @@
     <div class="block col-xs-6">
       <h2 class="title-add">{{article.title}}</h2>
       <div style="text-align: center;"><img class="card-img img-responsive" src="{{article.image}}" alt="Nolink événement">
-          <p>{{{article.content}}}</p>
+          {{{article.content}}}
         <div class="date">
             <p>Publié par {{auteur}}, le {{moment createDate format="DD-MM-YY"}}</p>
           </div>
@@ -19,8 +19,8 @@
             <a href="/article-delete/{{article._id}}"><button type="button"
                     class="btn btn-dark">supprimer</button></a>
                     {{!-- <input class="btn btn-dark" type=button onclick=window.location.href='localhost:3050'; value=Annuler /> --}}
-        {{/if}}  
-               <a class="retour-articles"><input class="btn"  type=button onclick=window.location.href='/'; value=Retour />       
          </div>            
+        {{/if}}  
+               <a class="retour-articles"><input class="btn" type=button onclick=window.location.href='/'; value=Retour /></a>       
 </section>
 {{>footer}}
