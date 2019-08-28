@@ -336,6 +336,18 @@ h1 {
   margin-bottom: 50px;
 }
 
+/* Taille icon réseau sosial*/
+.svg-inline--fa.fa-facebook-f.fa-w-9 {
+  height: 3rem;
+  width: 3rem;
+}
+
+/*Taille icon réseau social*/
+.svg-inline--fa.fa-instagram.fa-w-14 {
+  height: 3rem;
+  width: 3rem;
+}
+
 .a-icon {
   color: rgb(255, 255, 255);
   padding: 0 4px 0 4px;
@@ -423,6 +435,7 @@ h1 {
 .input>input {
   border: 0;
   width: 260px;
+  height: 3rem;
   padding: 10px 20px;
   outline: none;
 }
