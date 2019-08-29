@@ -2,26 +2,19 @@
                     Navbar
 ======================================== -->
 <header id="top">
-  <nav class="navbar navbar-expand-md navbar-light ">
+  <nav class="navbar navbar-expand-md navbar-light">
     <div class="container-fluid">
       <div class="text-nav">
         <a href="/" rel="noopener" class="navbar-brand">Bienvenue</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"><span class="navbar-toggler-icon"></span></button>
+        <button id="empty" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <br>
-        <div id="navbarCollapse" class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="nav navbar-nav">
-            <ul class="nav navbar-nav ml-auto">
-              <li class="nav-item dropdown" style="z-index: auto;">
-
                 {{#unless admin}}
-                {{!-- <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Portfolio</a>
-              <div class="dropdown-menu dropdown-menu">
-                <a href="#" class="dropdown-item">Compétences</a>
-                <a href="#" class="dropdown-item">Experience</a>
-              </div> --}}
-              </li>
               <li class="nav-item dropdown">
-                <a href="#" rel="noopener" class="nav-link  dropdown-toggle" data-toggle="dropdown">Info</a>
+                <a href="#" rel="noopener" class="nav-link dropdown-toggle" data-toggle="dropdown">Info</a>
                 <div class="dropdown-menu dropdown-menu">
                   <a href="https://syndicat-national-des-artistes-tatoueurs.assoconnect.com/page/86339-reglementation" target="_blank" rel="noopener" class="dropdown-item">Hygiène</a>
                   <a href="/horaire" rel="noopener" class="dropdown-item">Horaire</a>
@@ -67,8 +60,7 @@
                 <a class="nav-link" href="#" rel="noopener" data-toggle="modal" data-target="#darkModalForm2">Inscription</a>
               </li>
 
-              {{/if}}
-            </ul>
+              {{/if}}  
           </ul>
         </div>
       </div>
