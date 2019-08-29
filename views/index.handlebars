@@ -11,7 +11,7 @@
         <img class="card-img-top" src="{{image}}" alt="Événement tatouage">
         <div class="card-body">
           <div class="content" id="dash" {{!--contenteditable="true"--}}>
-            <a href="/articles/{{_id}}">
+            <a href="/articles/{{_id}}" rel="noopener">
               <h2 class="card-title">{{title}}</h2>
             </a>
             <div class="card-text">{{{content}}}</div>
@@ -100,15 +100,15 @@
 
   {{#if ../admin}}
   <div class="control">
-    <a href="/commentaire-delete/{{_id}}"><button type="button" class="btn btn-dark"><i
+    <a href="/commentaire-delete/{{_id}}" rel="noopener"><button type="button" class="btn btn-dark"><i
           class="fas fa-trash-alt"></i></button></a>&emsp;
-    <a href="/commentaire-edit/{{_id}}"><button type="button" class="btn btn-dark"><i
+    <a href="/commentaire-edit/{{_id}}" rel="noopener"><button type="button" class="btn btn-dark"><i
           class="fas fa-edit"></i></button></a>
   </div>
   {{/if}}
   {{/each}}
   <div>
-  <a href="#top"><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title=""
+  <a href="#top" rel="noopener"><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title=""
       data-original-title="Tooltip on top" aria="tooltip389606">Top</button></a>
   </div>
 </section>

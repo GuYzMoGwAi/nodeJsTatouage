@@ -119,15 +119,15 @@
 
 <ul class="nav nav-tabs" id="myTab" role="tablist" style="justify-content: center; margin-top: 5rem;" >
   <li class="nav-item">
-    <a class="nav-link active" id="utilisateurs-tab" data-toggle="tab" href="#utilisateurs" role="tab" aria-controls="utilisateurs"
+    <a class="nav-link active" id="utilisateurs-tab" data-toggle="tab" href="#utilisateurs" rel="noopener" role="tab" aria-controls="utilisateurs"
       aria-selected="true">Utilisateurs</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="commentaires-tab" data-toggle="tab" href="#commentaires" role="tab" aria-controls="commentaires"
+    <a class="nav-link" id="commentaires-tab" data-toggle="tab" href="#commentaires" rel="noopener" role="tab" aria-controls="commentaires"
       aria-selected="false">Commentaires</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="evenements-tab" data-toggle="tab" href="#evenements" role="tab" aria-controls="evenements"
+    <a class="nav-link" id="evenements-tab" data-toggle="tab" href="#evenements" rel="noopener" role="tab" aria-controls="evenements"
       aria-selected="false">Evenements</a>
   </li>
 </ul>
@@ -159,7 +159,7 @@
           <td style="font-size: 1rem;" name="name">{{name}}</td>
           <td style="font-size: 1rem;" name="email">{{email}}</td>
           <td style="font-size: 1rem;" name="id">{{id}}</td>
-          <td style="font-size: 1rem;" name="id"><a href="/adminPage/delete-profile/{{_id}}" onclick="return confirm('Voulez-vous vraiment supprimer cette utilisateur ?');"><button type="button"
+          <td style="font-size: 1rem;" name="id"><a href="/adminPage/delete-profile/{{_id}}" rel="noopener" onclick="return confirm('Voulez-vous vraiment supprimer cette utilisateur ?');"><button type="button"
             class="btn"><i class="fas fa-trash-alt"></i></button></a>
           </td>
         </tr>
@@ -194,9 +194,9 @@
           <td style="font-size: 1rem;" name="name">{{auteur}}</td>
           <td style="font-size: 1rem;" name="content">{{{content}}}</td>
           <td style="width: 10rem;" name="createDate">{{moment createDate format="DD-MM-YY HH:mm A"}}</td>
-          <td style="font-size: 1rem;" name="id"><a href="/commentaire-delete/{{_id}}" onclick="return confirm('Voulez-vous vraiment supprimer ce commentaire ?');"><button type="button"
+          <td style="font-size: 1rem;" name="id"><a href="/commentaire-delete/{{_id}}" rel="noopener" onclick="return confirm('Voulez-vous vraiment supprimer ce commentaire ?');"><button type="button"
                                                     class="btn"><i class="fas fa-trash-alt"></i></button></a>
-                                                  <a href="/commentaire-edit/{{_id}}"><button type="button"
+                                                  <a href="/commentaire-edit/{{_id}}" rel="noopener"><button type="button"
                                                     class="btn"><i class="fas fa-edit"></i></button></a>
           </td>
         </tr>
@@ -234,12 +234,12 @@
         {{#each adArticle }}
         <tr>
           <td style="width: 5rem; font-size: 1.5rem;" name="arNumber">{{arNumber}}</td>
-          <td name="title"><a href="/articles/{{_id}}" style="font-size: 1.2rem;">{{title}}</a></td>
+          <td name="title"><a href="/articles/{{_id}}" rel="noopener" style="font-size: 1.2rem;">{{title}}</a></td>
           <td name="content">{{{content}}}</td>
           <td style="width: 10rem;" name="createDate">{{moment createDate format="DD-MM-YY HH:mm A"}}</td>
-          <td name="delete-article"><a href="/article-delete/{{_id}}" onclick="return confirm('Voulez-vous vraiment supprimer cette article ?');" ><button type="button"
+          <td name="delete-article"><a href="/article-delete/{{_id}}" rel="noopener" onclick="return confirm('Voulez-vous vraiment supprimer cette article ?');" ><button type="button"
             class="btn"><i class="fas fa-trash-alt"></i></button></a>
-                                    <a href="/article-edit/{{_id}}" ><button type="button"
+                                    <a href="/article-edit/{{_id}}" rel="noopener" ><button type="button"
             class="btn"><i class="fas fa-edit"></i></button></a></td>      
         </tr>
         {{/each}}

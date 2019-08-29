@@ -5,7 +5,7 @@
   <nav class="navbar navbar-expand-md navbar-light ">
     <div class="container-fluid">
       <div class="text-nav">
-        <a href="/" class="navbar-brand">Bienvenue</a>
+        <a href="/" rel="noopener" class="navbar-brand">Bienvenue</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"><span class="navbar-toggler-icon"></span></button>
         <br>
         <div id="navbarCollapse" class="collapse navbar-collapse">
@@ -21,51 +21,50 @@
               </div> --}}
               </li>
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link  dropdown-toggle" data-toggle="dropdown">Info</a>
+                <a href="#" rel="noopener" class="nav-link  dropdown-toggle" data-toggle="dropdown">Info</a>
                 <div class="dropdown-menu dropdown-menu">
-                  <a href="https://syndicat-national-des-artistes-tatoueurs.assoconnect.com/page/86339-reglementation"
-                    class="dropdown-item">Hygiène</a>
-                  <a href="/horaire" class="dropdown-item">Horaire</a>
+                  <a href="https://syndicat-national-des-artistes-tatoueurs.assoconnect.com/page/86339-reglementation" target="_blank" rel="noopener" class="dropdown-item">Hygiène</a>
+                  <a href="/horaire" rel="noopener" class="dropdown-item">Horaire</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
-                <a href="/contact" class="nav-link">Contact</a>
+                <a href="/contact" rel="noopener" class="nav-link">Contact</a>
               </li>
               {{/unless}}
 
               {{#if user}}
               {{#unless admin}}
               <li class="nav-item">
-                <a class="nav-link" href="/#commentaire">Laisser un commentaire</a>
+                <a class="nav-link" href="/#commentaire" rel="noopener">Laisser un commentaire</a>
               </li>
               {{/unless}}
 
               {{#if admin}}
               <li class="nav-item">
-                <a class="nav-link" href="/articles/add">Ajouter un événement</a>
+                <a class="nav-link" href="/articles/add" rel="noopener">Ajouter un événement</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="/adminPage">Administration</a>
+                <a class="nav-link" href="/adminPage" rel="noopener">Administration</a>
               </li>
 
               {{/if}}
               <li class="nav-item">
-                <a class="nav-link" href="/logout">Déconnexion</a>
+                <a class="nav-link" href="/logout" rel="noopener">Déconnexion</a>
               </li>
               {{#unless admin}}
               <li class="nav-item">
-               <a class="nav-link" href="/delete-user/{{sess.userId}}" onclick="return confirm('Voulez-vous vraiment supprimer votre compte ?');">Se désinscrire ?</a>
+               <a class="nav-link" href="/delete-user/{{sess.userId}}" rel="noopener" onclick="return confirm('Voulez-vous vraiment supprimer votre compte ?');">Se désinscrire ?</a>
                 {{!-- onclick="return confirm('Voulez-vous vraiment supprimer votre compte ?');" --}}
               </li>
               {{/unless}}
               {{else}}
               <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#darkModalForm" href="#">Connexion</a>
+                <a class="nav-link" href="#" rel="noopener" data-toggle="modal" data-target="#darkModalForm">Connexion</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#darkModalForm2" href="#">Inscription</a>
+                <a class="nav-link" href="#" rel="noopener" data-toggle="modal" data-target="#darkModalForm2">Inscription</a>
               </li>
 
               {{/if}}
