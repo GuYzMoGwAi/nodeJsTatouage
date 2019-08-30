@@ -1,3 +1,3 @@
 User-agent: *
-
+disalow : /admin
 Sitemap:  https://www.nolink.fr/sitemap.xml
