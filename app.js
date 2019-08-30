@@ -38,7 +38,7 @@ var Handlebars = require("handlebars");
 var MomentHandler = require("handlebars.moment");
 MomentHandler.registerHelpers(Handlebars);
 
-app.use(express.static(path.join(__dirname,'public'),{ maxAge: "1 day"}));
+app.use(express.static(path.join(__dirname,'public'))); /*,{ maxAge: "1 day"} pour vidé le cache*/
 
 app.engine('.handlebars', exphbs({
     helpers: {
