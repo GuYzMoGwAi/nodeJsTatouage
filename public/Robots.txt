@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap:  https://www.nolink.fr/sitemap.xml
