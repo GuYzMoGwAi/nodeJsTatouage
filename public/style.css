@@ -142,7 +142,7 @@ section {
 
 /*margin cadre pseudo*/
 strong.text-light.bg-dark {
-  margin-bottom: 2rem;
+  margin-bottom: 2rem !important;
 }
 
 /* Architecture container evenement */
