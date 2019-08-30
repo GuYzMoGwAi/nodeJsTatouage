@@ -8,6 +8,7 @@ const expressSession = require("express-session");
 const MongoStore = require("connect-mongo");
 const connectFlash = require("connect-flash");
 const {stripTags} = require ('./helpers/hbs');
+const path = require('path');
 
 // EXPRESS ==============================================
 const app = express();
@@ -37,7 +38,7 @@ var Handlebars = require("handlebars");
 var MomentHandler = require("handlebars.moment");
 MomentHandler.registerHelpers(Handlebars);
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname,'public')));
 
 app.engine('.handlebars', exphbs({
     helpers: {
