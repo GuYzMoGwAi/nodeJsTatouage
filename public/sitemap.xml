@@ -1,34 +1,104 @@
-<urlset
-    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-    <url>
-        <loc>https://www.nolink.fr/</loc>
-        <lastmod>2019-08-30T13:48:55+00:00</lastmod>
-        <priority>1.00</priority>
-    </url>
-    <url>
-        <loc>https://www.nolink.fr/horaire</loc>
-        <lastmod>2019-08-30T13:48:55+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.nolink.fr/contact</loc>
-        <lastmod>2019-08-30T13:48:55+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.nolink.fr/articles/5d679303e9d0f0178a918a91</loc>
-        <lastmod>2019-08-30T13:48:55+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.nolink.fr/articles/5d678c69e9d0f0178a918a90</loc>
-        <lastmod>2019-08-30T13:48:55+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://www.nolink.fr/articles/5d678b06e9d0f0178a918a8f</loc>
-        <lastmod>2019-08-30T13:48:55+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
+<url>
+
+    <loc>https://www.nolink.fr/</loc>
+
+    <lastmod>2019-08-30</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+
+
+    <priority>1.0</priority>
+
+</url>  
+
+<url>
+
+    <loc>https://www.nolink.fr/horaire</loc>
+
+    <lastmod>2019-08-30</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+
+
+    <priority>1.0</priority>
+
+</url>  
+
+<url>
+
+    <loc>https://www.nolink.fr/contact</loc>
+
+    <lastmod>2019-08-30</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+
+
+    <priority>1.0</priority>
+
+</url>  
+
+<url>
+
+    <loc>https://www.nolink.fr/articles/5d679303e9d0f0178a918a91</loc>
+
+    <lastmod>2019-08-30</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+
+
+    <priority>1.0</priority>
+
+</url>  
+
+<url>
+
+    <loc>https://www.nolink.fr/articles/5d678c69e9d0f0178a918a90</loc>
+
+    <lastmod>2019-08-30</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+
+
+    <priority>1.0</priority>
+
+</url>  
+
+<url>
+
+    <loc>https://www.nolink.fr/articles/5d678b06e9d0f0178a918a8f</loc>
+
+    <lastmod>2019-08-30</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+
+
+    <priority>1.0</priority>
+
+</url>  
+
+<url>
+
+    <loc>https://www.nolink.fr/cdn-cgi/l/email-protection</loc>
+
+    <lastmod>2019-08-30</lastmod>
+
+    <changefreq>weekly</changefreq>
+
+
+
+    <priority>1.0</priority>
+
+</url>  
+
 </urlset>
+      
