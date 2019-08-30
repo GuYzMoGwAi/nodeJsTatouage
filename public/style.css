@@ -140,6 +140,11 @@ section {
   /* padding-bottom: 2rem; */
 }
 
+/*margin cadre pseudo*/
+strong.text-light.bg-dark {
+  margin-bottom: 2rem;
+}
+
 /* Architecture container evenement */
 .container-fluid {
   /* padding-top: 1rem;  */
