@@ -4,7 +4,7 @@
   "description": "site vitrine salon de tatouage nolink",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Lewis",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "express-session": "^1.16.2",
     "handlebars-helpers": "^0.10.0",
     "handlebars.moment": "^1.0.4",
+    "mocha": "^6.2.0",
     "moment": "^2.24.0",
     "mongoose": "^5.6.11",
     "nodemon": "^1.19.1",
