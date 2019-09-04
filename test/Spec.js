@@ -8,7 +8,7 @@ it('save records to a database', function(){
 
     let Art = new Articles({
 
-        title:'Cévenn’ink Tattoo '
+        title:'Cévenn’ink Tattoo'
 
     })
 
